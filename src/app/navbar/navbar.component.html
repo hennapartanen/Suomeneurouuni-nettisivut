@@ -1,1 +1,40 @@
-<p>navbar works!</p>
+<mat-toolbar fxLayout="row">
+    <span fxFlex>SUOMENEUROUUNI</span>
+    <button mat-button *ngFor="let item of menuItems" fxHide.sm>
+        {{item.label}}
+        
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.sm>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="testMenu" >   
+        Palvelut
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #testMenu="matMenu">
+        <button mat-menu-item>Lämminhenkisen tulisija valinta</button>
+        <button mat-menu-item>Uunimestarin käynti</button>
+        <button mat-menu-item>Perustukset</button>
+        <button mat-menu-item>Palomuurit</button>
+        <button mat-menu-item>Hormistot</button>
+        <button mat-menu-item>Pinnoitukset</button>
+        <button mat-menu-item>Vanhan tulisijan purku tai muutostyöt</button>
+        <button mat-menu-item>Luvat</button>
+        <button mat-menu-item>Turvaetäisyydet</button>
+      </mat-menu>
+
+    <mat-menu #dropMenu="matMenu">
+        
+        <ng-container *ngFor="let item of menuItems">
+            <div [fxShow]="!item.showOnDesktop" 
+            [fxShow.sm]="!item.showOnTablet" 
+            [fxShow.xs]="!item.showOnMobile">
+            <button mat-menu-item>
+                {{item.label}}
+            </button>
+            <mat-divider></mat-divider>
+        </div>
+        </ng-container>
+    </mat-menu>
+</mat-toolbar>
