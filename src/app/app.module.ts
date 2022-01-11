@@ -14,6 +14,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { MatDividerModule} from '@angular/material/divider';
 import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -25,7 +26,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AppComponent,
     HeaderComponent,
     NavbarComponent,
-    ContentComponent
+    ContentComponent,
+    FooterComponent
 
   ],
   imports: [

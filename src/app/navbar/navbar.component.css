@@ -9,6 +9,7 @@ mat-toolbar {
     font-size: 15px;
     position: fixed;
     z-index: 1000; 
+
     background-color: var(--navbar-scroll);
     transition: background-color 1s ease;
     color: var(--navbar-scroll-text);
