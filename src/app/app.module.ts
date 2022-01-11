@@ -3,17 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ContentComponent } from './content/content.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule} from '@angular/flex-layout';
-import { MatToolbarModule} from '@angular/material/toolbar';
-import { MatMenuItem, MatMenuModule} from '@angular/material/menu';
-import { MatButtonModule} from '@angular/material/button';
-import { MatIconModule} from '@angular/material/icon';
-import { MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 import { GalleryDivComponent } from './gallery-div/gallery-div.component';
-
-
+import { ScrollDispatcher } from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -22,25 +24,29 @@ import { GalleryDivComponent } from './gallery-div/gallery-div.component';
     HeaderComponent,
     NavbarComponent,
     GalleryDivComponent,
+    ContentComponent,
+    FooterComponent
 
   ],
   imports: [
     BrowserModule,
-     NgbModule,
-     BrowserAnimationsModule,
-     FlexLayoutModule,
-     MatToolbarModule,
-     MatMenuModule,
-     MatButtonModule,
-     MatIconModule,
-     MatDividerModule,
-  
+    NgbModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    ScrollingModule,
 
-     
 
-     
+
+
+
+
   ],
-  providers: [],
+  providers: [ScrollDispatcher],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

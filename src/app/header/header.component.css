@@ -10,6 +10,7 @@ body {
     background-size: cover;
     height: 500px;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     opacity: 97%;
