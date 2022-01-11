@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> f43caf5aa822ded0bc92721f67d317b5bc5e51d3
 body {
     height: 100%;
 }
@@ -11,9 +14,16 @@ body {
     background-size: cover;
     height: 500px;
     display: flex;
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> f43caf5aa822ded0bc92721f67d317b5bc5e51d3
     align-items: center;
     justify-content: center;
     opacity: 97%;
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f43caf5aa822ded0bc92721f67d317b5bc5e51d3
