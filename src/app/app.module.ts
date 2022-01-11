@@ -11,6 +11,7 @@ import { MatMenuItem, MatMenuModule} from '@angular/material/menu';
 import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatDividerModule} from '@angular/material/divider';
+import { GalleryDivComponent } from './gallery-div/gallery-div.component';
 
 
 
@@ -20,6 +21,7 @@ import { MatDividerModule} from '@angular/material/divider';
     AppComponent,
     HeaderComponent,
     NavbarComponent,
+    GalleryDivComponent,
 
   ],
   imports: [

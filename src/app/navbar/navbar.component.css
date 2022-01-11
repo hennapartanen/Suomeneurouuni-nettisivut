@@ -5,8 +5,8 @@ mat-toolbar {
     justify-content: space-between;
     height: 3.5rem;
     width: 100%;
-    background-color: rgb(255, 139, 44);
-    color: rgb(92, 49, 13);
+    background-color: #fe852b;
+    color: #212529;
     font-size: 25px;
 
   }
