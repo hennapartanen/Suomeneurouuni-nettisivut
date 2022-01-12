@@ -35,7 +35,6 @@ import { HomepageComponent } from './homepage/homepage.component';
   ],
   imports: [
     BrowserModule,
-<<<<<<< HEAD
      NgbModule,
      BrowserAnimationsModule,
      FlexLayoutModule,
@@ -49,21 +48,6 @@ import { HomepageComponent } from './homepage/homepage.component';
     
   
   
-=======
-    NgbModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    ScrollingModule,
-
-
-
-
->>>>>>> 12fc8ab8074a18160b2db81d4c50fc55d3d56026
 
 
   ],
