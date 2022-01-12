@@ -6,6 +6,9 @@ mat-toolbar {
     justify-content: space-between;
     height: 3rem;
     width: 100%;
+    background-color: #fe852b;
+    color: #212529;
+    font-size: 25px;
     font-size: 15px;
     position: fixed;
     z-index: 1000; 
@@ -15,7 +18,6 @@ mat-toolbar {
     color: var(--navbar-scroll-text);
     -webkit-box-shadow: var(--navbar-scroll-shadow);
     box-shadow: var(--navbar-scroll-shadow);
-
    
   }
   .mat-button {
