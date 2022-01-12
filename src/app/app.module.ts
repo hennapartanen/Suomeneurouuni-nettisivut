@@ -15,6 +15,9 @@ import { MatDividerModule} from '@angular/material/divider';
 import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FooterComponent } from './footer/footer.component';
+import { AuthComponent } from './auth/auth.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 
@@ -27,7 +30,9 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     NavbarComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent,
+    HomepageComponent
 
   ],
   imports: [
@@ -41,6 +46,8 @@ import { FooterComponent } from './footer/footer.component';
      MatIconModule,
      MatDividerModule,
      ScrollingModule,
+     AppRoutingModule
+    
   
   
 
