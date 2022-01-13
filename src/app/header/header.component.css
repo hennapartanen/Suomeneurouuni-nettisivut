@@ -4,15 +4,15 @@ body {
 
 .header{
     
-    background-image: url(../../assets/img/fireplace.jpg);
+    background-image: url(../../assets/img/fireplace.png);
     
     background-position:top;
     background-size: cover;
-    height: 500px;
+    height: 600px;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
     opacity: 97%;
-    
+    margin-bottom: 200px;
 }
