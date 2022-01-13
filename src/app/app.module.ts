@@ -16,6 +16,9 @@ import { GalleryDivComponent } from './gallery-div/gallery-div.component';
 import { ScrollDispatcher } from '@angular/cdk/scrolling';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FooterComponent } from './footer/footer.component';
+import { AuthComponent } from './auth/auth.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -25,24 +28,26 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     GalleryDivComponent,
     ContentComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent,
+    HomepageComponent
 
   ],
   imports: [
     BrowserModule,
-    NgbModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    ScrollingModule,
-
-
-
-
+     NgbModule,
+     BrowserAnimationsModule,
+     FlexLayoutModule,
+     MatToolbarModule,
+     MatMenuModule,
+     MatButtonModule,
+     MatIconModule,
+     MatDividerModule,
+     ScrollingModule,
+     AppRoutingModule
+    
+  
+  
 
 
   ],
