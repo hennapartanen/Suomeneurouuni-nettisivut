@@ -3,16 +3,13 @@ body {
 }
 
 .header{
-    
-    background-image: url(../../assets/img/fireplace.png);
-    
+   background-color:  #fe852b;
     background-position:top;
     background-size: cover;
-    height: 600px;
+    height: 20rem;
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
-    opacity: 97%;
-    margin-bottom: 200px;
+    margin-bottom: 1rem;
 }
