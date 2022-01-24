@@ -21,6 +21,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TopicsComponent } from './topics/topics.component';
 
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +35,7 @@ import { TopicsComponent } from './topics/topics.component';
     FooterComponent,
     AuthComponent,
     HomepageComponent,
+<<<<<<< HEAD
     TopicsComponent
 
   ],
@@ -50,6 +54,27 @@ import { TopicsComponent } from './topics/topics.component';
 
 
 
+=======
+ 
+  ],
+  imports: [
+       BrowserModule,
+     NgbModule,
+     BrowserAnimationsModule,
+     FlexLayoutModule,
+     MatToolbarModule,
+     MatMenuModule,
+     MatButtonModule,
+     MatIconModule,
+     MatDividerModule,
+     ScrollingModule,
+     AppRoutingModule,
+     FormsModule,
+     HttpClientModule
+    
+  
+  
+>>>>>>> 67a9aaa5932b139ea0a6befc74cfef7dbd3726fc
 
 
   ],
