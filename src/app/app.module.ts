@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './auth/auth.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { TopicsComponent } from './topics/topics.component';
 
 
 @NgModule({
@@ -30,24 +31,25 @@ import { HomepageComponent } from './homepage/homepage.component';
     ContentComponent,
     FooterComponent,
     AuthComponent,
-    HomepageComponent
+    HomepageComponent,
+    TopicsComponent
 
   ],
   imports: [
     BrowserModule,
-     NgbModule,
-     BrowserAnimationsModule,
-     FlexLayoutModule,
-     MatToolbarModule,
-     MatMenuModule,
-     MatButtonModule,
-     MatIconModule,
-     MatDividerModule,
-     ScrollingModule,
-     AppRoutingModule
-    
-  
-  
+    NgbModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    ScrollingModule,
+    AppRoutingModule
+
+
+
 
 
   ],
