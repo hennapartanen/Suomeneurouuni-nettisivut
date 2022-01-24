@@ -20,6 +20,9 @@ import { AuthComponent } from './auth/auth.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
 
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,11 +33,11 @@ import { HomepageComponent } from './homepage/homepage.component';
     ContentComponent,
     FooterComponent,
     AuthComponent,
-    HomepageComponent
-
+    HomepageComponent,
+ 
   ],
   imports: [
-    BrowserModule,
+       BrowserModule,
      NgbModule,
      BrowserAnimationsModule,
      FlexLayoutModule,
@@ -44,7 +47,9 @@ import { HomepageComponent } from './homepage/homepage.component';
      MatIconModule,
      MatDividerModule,
      ScrollingModule,
-     AppRoutingModule
+     AppRoutingModule,
+     FormsModule,
+     HttpClientModule
     
   
   
