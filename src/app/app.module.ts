@@ -35,27 +35,8 @@ import {HttpClientModule} from '@angular/common/http';
     FooterComponent,
     AuthComponent,
     HomepageComponent,
-<<<<<<< HEAD
     TopicsComponent
 
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDividerModule,
-    ScrollingModule,
-    AppRoutingModule
-
-
-
-=======
- 
   ],
   imports: [
        BrowserModule,
@@ -72,10 +53,7 @@ import {HttpClientModule} from '@angular/common/http';
      FormsModule,
      HttpClientModule
     
-  
-  
->>>>>>> 67a9aaa5932b139ea0a6befc74cfef7dbd3726fc
-
+ 
 
   ],
   providers: [ScrollDispatcher],
