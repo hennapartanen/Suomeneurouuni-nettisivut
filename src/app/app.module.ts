@@ -19,10 +19,13 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './auth/auth.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
-import { TopicsComponent } from './topics/topics.component';
-
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { TopicsComponent } from './topics/topics.component';
+import {  MatSidenavModule} from '@angular/material/sidenav';
+import {   MatListModule } from "@angular/material/list";
+
+
 
 
 @NgModule({
@@ -36,10 +39,11 @@ import {HttpClientModule} from '@angular/common/http';
     AuthComponent,
     HomepageComponent,
     TopicsComponent
+ 
 
   ],
   imports: [
-       BrowserModule,
+    BrowserModule,
      NgbModule,
      BrowserAnimationsModule,
      FlexLayoutModule,
@@ -51,9 +55,13 @@ import {HttpClientModule} from '@angular/common/http';
      ScrollingModule,
      AppRoutingModule,
      FormsModule,
-     HttpClientModule
+     HttpClientModule,
+     MatSidenavModule,
+     MatListModule
     
- 
+  
+  
+
 
   ],
   providers: [ScrollDispatcher],
