@@ -1,0 +1,22 @@
+<input type="checkbox" id="check" (click)="checkChange()"> <label class="chat-btn" for="check" style="position: fixed;">
+    <fa-icon *ngIf="checked === true" [icon]="faTimes"></fa-icon>
+    <fa-icon *ngIf="checked === false" [icon]="faComment"></fa-icon>
+</label>
+
+<div class="wrapper" style="position: fixed; ">
+    <div class="header">
+        <h2>Suomen Eurouuni</h2>
+    </div>
+    <div class="chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div class="chat-form" *ngFor="let message of messages">
+            <div *ngIf="messageSender === message.user" class="message bot-message">
+                <b>{{ message.user }}</b> <br>
+                <span>{{ message.msg }}</span>
+            </div>
+        </div>
+        <div class="chat-form" style="padding-bottom: 0;">
+            <app-formbtn [showButton]="showBtn"></app-formbtn>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>

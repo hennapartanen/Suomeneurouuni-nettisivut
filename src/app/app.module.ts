@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,11 +20,15 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthComponent } from './auth/auth.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { TopicsComponent } from './topics/topics.component';
-import {  MatSidenavModule} from '@angular/material/sidenav';
-import {   MatListModule } from "@angular/material/list";
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from "@angular/material/list";
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormbtnComponent } from './chatbot/formbtn/formbtn.component';
+import { FormsComponent } from './chatbot/forms/forms.component';
 
 
 
@@ -38,30 +43,31 @@ import {   MatListModule } from "@angular/material/list";
     FooterComponent,
     AuthComponent,
     HomepageComponent,
-    TopicsComponent
- 
+    TopicsComponent,
+    ChatbotComponent,
+    FormbtnComponent,
+    FormsComponent
+
 
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
-     NgbModule,
-     BrowserAnimationsModule,
-     FlexLayoutModule,
-     MatToolbarModule,
-     MatMenuModule,
-     MatButtonModule,
-     MatIconModule,
-     MatDividerModule,
-     ScrollingModule,
-     AppRoutingModule,
-     FormsModule,
-     HttpClientModule,
-     MatSidenavModule,
-     MatListModule
-    
-  
-  
-
+    NgbModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    ScrollingModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatListModule,
+    FontAwesomeModule
 
   ],
   providers: [ScrollDispatcher],

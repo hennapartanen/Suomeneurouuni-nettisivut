@@ -1,11 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'src/app/navbar/menu-item';
-
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-navbar',
@@ -14,46 +9,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  menuItems: MenuItem[] = [
-    {
-      label: 'Galleria',
-    
-      showOnMobile: true,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: 'Tarjoukset',
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
 
-  
-    {
-      label: 'Palvelut',
-    
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: false
-    },
-    {
-      label: 'Yhteystiedot',
-  
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true
-    },
-    {
-      label: 'Verkkokauppa',
-
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: false
-    },
-  ];
-
-  constructor(private scroller: ViewportScroller, private router: Router) {}
+  constructor(private scroller: ViewportScroller, private router: Router) { }
   ngOnInit(): void {
     window.addEventListener('scroll', this.scroll, true);
 
@@ -64,7 +21,6 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown2() {
-    //this.scroller.scrollToAnchor("targetGreen");
     document.getElementById("targetPalvelut").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -73,7 +29,6 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown3() {
-    //this.scroller.scrollToAnchor("targetGreen");
     document.getElementById("targetYhteistiedot").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -81,14 +36,13 @@ export class NavbarComponent implements OnInit {
     });
   }
   goDown4() {
-    //this.scroller.scrollToAnchor("targetGreen");
     document.getElementById("targetVerkkokauppa").scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest"
     });
   }
- 
+
 
   scroll = (): void => {
 
