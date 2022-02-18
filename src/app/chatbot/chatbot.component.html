@@ -3,13 +3,22 @@
     <fa-icon *ngIf="checked === false" [icon]="faComment"></fa-icon>
 </label>
 
-<div class="wrapper" style="position: fixed; ">
+<div id="wrapper0" class="wrapper0 hide" style="position: fixed; ">
+    <div class="chat-form" *ngFor="let popMessage of popMessages">
+        <div class="message pop-message">
+            <b>{{ popMessage.user }}</b> <br>
+            <span>{{ popMessage.msg }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper1" style="position: fixed; ">
     <div class="header">
         <h2>Suomen Eurouuni</h2>
     </div>
     <div class="chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
         <div class="chat-form" *ngFor="let message of messages">
-            <div *ngIf="messageSender === message.user" class="message bot-message">
+            <div class="message bot-message">
                 <b>{{ message.user }}</b> <br>
                 <span>{{ message.msg }}</span>
             </div>

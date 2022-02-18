@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
   selector: 'app-chatbot',
   templateUrl: './chatbot.component.html',
@@ -12,33 +11,56 @@ export class ChatbotComponent implements OnInit {
   faTimes = faTimes;
   faComment = faComment;
   checked: boolean = false;
-
   showBtn: boolean = true;
+
+
+  constructor() { }
+  ngOnInit(): void {
+    window.addEventListener('scroll', this.scroll, true);
+  }
+
+  popMessages = [
+    {
+      user: 'Yhteydenottobotti',
+      msg: 'Hei olen Suomen Eurouuni yhteydenottobotti!'
+    }
+  ];
 
   messages = [
     {
-      user: 'chatbot',
-      msg: 'Hei olen Suomen Eurouuni chatbot!'
+      user: 'Yhteydenottobotti',
+      msg: 'Hei olen Suomen Eurouuni yhteydenottobotti!'
     },
     {
-      user: 'chatbot',
+      user: 'Yhteydenottobotti',
       msg: 'Valitse aihe jonka kanssa tarvitset apua alta'
     }
   ];
 
-  messageSender = 'chatbot';
-
-  addButton() {
+  function() {
     this.showBtn = !this.showBtn;
   }
 
   checkChange() {
     this.checked = !this.checked;
+    let wrapper = document.getElementById("wrapper0");
+    wrapper.style.display = "none";
   }
 
-  ngOnInit() {
+  scroll = (): void => {
+    let scrollHeigth;
+    let wrapper = document.getElementById("wrapper0");
+
+    if (window.innerWidth < 150) {
+      scrollHeigth = 10;
+    }
+    else {
+      scrollHeigth = 1000;
+    }
+
+    if (window.scrollY >= scrollHeigth) {
+      wrapper.className = "wrapper0 show";
+    }
 
   }
-
-  constructor() { }
 }
