@@ -13,7 +13,5 @@ export class GalleryDivComponent implements OnInit {
     
   }
 
-    onFetchData() {
-      this.dataStorageService.fetchItems().subscribe();
-    }
+   
 }
