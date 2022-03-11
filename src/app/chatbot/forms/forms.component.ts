@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { EmailService } from '../services/email.service';
 
 @Component({
   selector: 'app-forms',
@@ -15,15 +16,33 @@ export class FormsComponent implements OnInit {
 
   faExclamationTriangle = faExclamationTriangle;
 
-  exform: FormGroup;
+  loading = false;
 
-  constructor() { }
+  nameFormControl = new FormControl;
+  emailFormControl = new FormControl("", [
+    Validators.required,
+    Validators.email
+  ]);
+  messageFormControl = new FormControl;
+
+
+  constructor(private formBuilder: FormBuilder, private emailService: EmailService) { }
 
   ngOnInit() {
 
-    this.exform = new FormGroup({
-      'email': new FormControl(null, [Validators.required, Validators.email])
-    })
   }
 
+  sendMail() {
+    let formSubject = document.getElementById("formSubject").innerHTML;
+
+    let reqObj = {
+      subject: formSubject,
+      name: this.nameFormControl.value,
+      email: this.emailFormControl.value,
+      message: this.messageFormControl.value
+    }
+    this.emailService.sendMessage(reqObj).subscribe(data => {
+      console.log(data);
+    })
+  }
 }

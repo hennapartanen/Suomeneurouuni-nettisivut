@@ -16,7 +16,7 @@
     <div class="header">
         <h2>Suomen Eurouuni</h2>
     </div>
-    <div class="chat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <div class="chat">
         <div class="chat-form" *ngFor="let message of messages">
             <div class="message bot-message">
                 <b>{{ message.user }}</b> <br>

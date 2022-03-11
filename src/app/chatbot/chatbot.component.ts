@@ -13,26 +13,26 @@ export class ChatbotComponent implements OnInit {
   checked: boolean = false;
   showBtn: boolean = true;
 
-
   constructor() { }
+
   ngOnInit(): void {
-    window.addEventListener('scroll', this.scroll, true);
+
   }
 
   popMessages = [
     {
-      user: 'Yhteydenottobotti',
-      msg: 'Hei olen Suomen Eurouuni yhteydenottobotti!'
+      user: 'Yhteydenottobotti🤖',
+      msg: '👋Hei olen Suomen Eurouuni yhteydenottobotti'
     }
   ];
 
   messages = [
     {
-      user: 'Yhteydenottobotti',
-      msg: 'Hei olen Suomen Eurouuni yhteydenottobotti!'
+      user: 'Yhteydenottobotti🤖',
+      msg: '👋Hei olen Suomen Eurouuni yhteydenottobotti'
     },
     {
-      user: 'Yhteydenottobotti',
+      user: 'Yhteydenottobotti🤖',
       msg: 'Valitse aihe jonka kanssa tarvitset apua alta'
     }
   ];
@@ -61,6 +61,5 @@ export class ChatbotComponent implements OnInit {
     if (window.scrollY >= scrollHeigth) {
       wrapper.className = "wrapper0 show";
     }
-
   }
 }
