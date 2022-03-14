@@ -1,0 +1,18 @@
+<div id="kontainer"><div class="row"> 
+    <div class="col-xs-12"> 
+      <button class="btn btn-success" (click)="onNewTuote()">Uusi tuote</button> 
+    </div> 
+  </div> 
+ 
+  <hr> 
+  <div class="col-xs-12"> 
+    <button routerLink="/gallery" class="btn btn-primary"> takasin </button> 
+  </div>  
+
+      <app-gallery-itemit-item 
+      *ngFor="let tuoteEl of tuotteet; let i = index" 
+      [tuote]="tuoteEl" 
+        [index]="i"></app-gallery-itemit-item> 
+      </div>
+
+  
