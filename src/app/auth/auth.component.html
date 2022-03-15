@@ -4,10 +4,11 @@
   <div class="alert alert-danger" *ngIf="error">
     <p>{{error}}</p>
   </div>
-  <h3>Login</h3>
 
+  <h3>Login</h3>
  
-  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+  
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" >
   
   
       <div class="form-group">
