@@ -3,7 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs'; 
 import { Item } from '../gallery.model'; 
 import { GalleryService } from '../gallery.service'; 
-
+import { AuthService } from 'src/app/auth/auth.service';
+ 
 
 @Component({ 
   selector: 'app-gallery-list', 
@@ -14,27 +15,42 @@ import { GalleryService } from '../gallery.service';
 
 export class GalleryListComponent implements OnInit, OnDestroy { 
   items: Item[]; 
+  isAuthenticated = false;
   subscription: Subscription; 
+  private userSub: Subscription;
 
  
  
 
   constructor(private galleryService: GalleryService, 
               private router: Router,
+              private authService: AuthService, 
               private route: ActivatedRoute) { 
 
   } 
 
-  ngOnInit() { 
-    this.subscription = this.galleryService.itemsChanged 
-      .subscribe( 
-        (items: Item[]) => { 
-          this.items = items; 
-        } 
-      ); 
-    this.items = this.galleryService.getItems(); 
+ 
+ 
 
+  ngOnInit() { 
+
+    this.subscription = this.galleryService.itemsChanged 
+    .subscribe( 
+      (items: Item[]) => { 
+        this.items = items; 
+      } 
+    ); 
+  this.items = this.galleryService.getItems(); 
+
+    this.userSub = this.authService.user.subscribe(user => {
+      this.isAuthenticated = !!user;
+      console.log(!user);
+      console.log(!!user);
+    });
+
+   
   } 
+
 
   onNewItem() { 
     this.router.navigate(['new'], {relativeTo: this.route}); 
@@ -43,6 +59,7 @@ export class GalleryListComponent implements OnInit, OnDestroy {
  
   ngOnDestroy() { 
     this.subscription.unsubscribe(); 
+    this.userSub.unsubscribe();
   } 
 
 } 
