@@ -1,12 +1,13 @@
-<div id="kontainer"><div class="row"> 
-  <div class="col-xs-12"> 
-    <button class="btn btn-success" (click)="onNewItem()">Uusi tuote</button> 
+<div id="kontainer" *ngIf="isAuthenticated">
+  <div class="row"> 
+    <div class="col-xs-12"> 
+      <button class="btn btn-success" (click)="onNewItem()">Uusi tuote</button> 
+    </div> 
   </div> 
-</div> 
-<hr> 
+</div>
 
-    <app-gallery-item 
-    *ngFor="let itemEl of items; let i = index" 
-      [item]="itemEl" 
-      [index]="i" ></app-gallery-item> 
-    </div>
+      <app-gallery-item 
+      *ngFor="let itemEl of items; let i = index" 
+       [item]="itemEl" 
+       [index]="i"></app-gallery-item> 
+   
