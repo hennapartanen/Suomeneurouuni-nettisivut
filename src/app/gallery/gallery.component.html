@@ -1,6 +1,9 @@
-<app-gallery-list> </app-gallery-list> 
+
+        <app-gallery-list></app-gallery-list> 
  
   
 
-<router-outlet></router-outlet> 
-
+        <router-outlet *ngIf="isAuthenticated"></router-outlet> 
+  
+  
+   
