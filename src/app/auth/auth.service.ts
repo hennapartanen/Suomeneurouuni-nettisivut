@@ -26,7 +26,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBoi9gg2JgFRk84L7P3E1mjKqp-ExYabQI',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC-O0-Lj0tjPToBSQpFqIcgGJaMt8Ia6YA',
         {
           email: email,
           password: password,
