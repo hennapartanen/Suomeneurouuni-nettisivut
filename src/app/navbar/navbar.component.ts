@@ -1,6 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +13,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  isAuthenticated = false;
+  private userSub: Subscription;
 
-  constructor(private scroller: ViewportScroller, private router: Router) { }
-  ngOnInit(): void {
+  constructor(private scroller: ViewportScroller, 
+              private router: Router, 
+              private dataStorageService: DataStorageService,
+              private authService: AuthService) {}
+
+            
+  ngOnInit()  {
     window.addEventListener('scroll', this.scroll, true);
-
+    this.userSub = this.authService.user.subscribe(user => {
+      this.isAuthenticated = !!user;
+      console.log(!user);
+      console.log(!!user);
+    });
   }
 
   goDown1() {
@@ -21,6 +36,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown2() {
+    
     document.getElementById("targetPalvelut").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -29,6 +45,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown3() {
+ 
     document.getElementById("targetYhteistiedot").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -36,6 +53,7 @@ export class NavbarComponent implements OnInit {
     });
   }
   goDown4() {
+
     document.getElementById("targetVerkkokauppa").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -43,7 +61,13 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  onSaveData() {
+    this.dataStorageService.storeItems();
+  }
 
+  ngOnDestroy() {
+    this.userSub.unsubscribe();
+  }
   scroll = (): void => {
 
     let scrollHeigth;
@@ -62,12 +86,10 @@ export class NavbarComponent implements OnInit {
 
     if (window.scrollY >= scrollHeigth) {
       document.body.style.setProperty('--navbar-scroll', "#FC842B");
-      document.body.style.setProperty('--navbar-scroll-text', "#3C424C");
       document.body.style.setProperty('--navbar-scroll-shadow', "0px 6px 12px -5px #000000");
 
     } else if (window.scrollY <= scrollHeigth) {
       document.body.style.setProperty('--navbar-scroll', "transparent");
-      document.body.style.setProperty('--navbar-scroll-text', "white");
       document.body.style.setProperty('--navbar-scroll-shadow', "none");
 
 
