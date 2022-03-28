@@ -12,6 +12,9 @@ export class GalleryDivComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  
+  onFetchData() {
+    this.dataStorageService.fetchItems().subscribe();
+  }
    
 }
