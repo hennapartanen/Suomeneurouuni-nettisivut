@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router'; 
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms'; 
 import { GalleryService } from '../gallery.service'; 
-
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFireUploadTask } from '@angular/fire/compat/storage';
+import { Observable } from 'rxjs';
 
 @Component({ 
 
@@ -17,27 +19,44 @@ export class GalleryEditComponent implements OnInit {
   id: number; 
   editMode = false; 
   itemForm: FormGroup; 
+  basePath = '/images';                       
+  downloadableURL = '';                      
+  task: AngularFireUploadTask;               
+  progressValue: Observable<number>;     
+
 
   constructor(private route: ActivatedRoute, 
-              private galleryService: GalleryService, 
-              private router: Router) { 
-
+              private router: Router,
+              private galleryService: GalleryService,
+              private fireStorage: AngularFireStorage,
+              ) { 
   } 
 
- 
-  ngOnInit() { 
 
+  ngOnInit() { 
     this.route.params 
       .subscribe( 
         (params: Params) => { 
           this.id = +params['id']; 
           this.editMode = params['id'] != null; 
-          this.initForm(); 
-
+          this.initForm();
         } 
       ); 
-      
+
   } 
+
+  async onFileChanged(event) {
+    const file = event.target.files[0];
+    if (file) {
+       const filePath = `${this.basePath}/${file.name}`;  
+       this.task =  this.fireStorage.upload(filePath, file);    
+       this.progressValue = this.task.percentageChanges();      
+       (await this.task).ref.getDownloadURL().then(url => {this.downloadableURL = url; });  
+ 
+     } else {  
+       alert('No images selected');
+       this.downloadableURL = ''; }
+   }
 
 
   onSubmit() { 
@@ -48,7 +67,6 @@ export class GalleryEditComponent implements OnInit {
       this.galleryService.addItem(this.itemForm.value); 
     } 
     this.onCancel(); 
-
   } 
   
   onAddTuote() {
@@ -60,6 +78,7 @@ export class GalleryEditComponent implements OnInit {
       })
     );
   }
+
 
   onDeleteTuote(index: number) {
     (<FormArray>this.itemForm.get('tuotteet')).removeAt(index);
