@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core'; 
 
 import { Item } from '../../gallery.model'; 
-import { DataStorageService } from 'src/app/shared/data-storage.service';
- 
+import { DataStorageService } from 'src/app/shared/data.storage.service';
 
 @Component({ 
 
