@@ -37,14 +37,13 @@ import { environment } from 'src/environments/environment';
 import { GalleryDetailComponent } from './gallery/gallery-detail/gallery-detail.component';
 import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
 import { GalleryService } from './gallery/gallery.service';
-import { GalleryStartComponent } from './gallery/gallery-start/gallery-start.component';
-
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
 import { GalleryComponent } from './gallery/gallery.component';  
 import { GalleryEditComponent } from './gallery/gallery-edit/gallery-edit.component';  
-import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/gallery-item.component';  
+import { GalleryStartComponent } from './gallery/gallery-start/gallery-start.component';
+import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/gallery-item.component';
 
 @NgModule({
   declarations: [
@@ -68,8 +67,8 @@ import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/galler
   GalleryListComponent,
    GalleryComponent,
    GalleryEditComponent,
-   GalleryItemComponent,
-
+   GalleryItemComponent
+  
   
 
 
@@ -115,3 +114,4 @@ import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/galler
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
