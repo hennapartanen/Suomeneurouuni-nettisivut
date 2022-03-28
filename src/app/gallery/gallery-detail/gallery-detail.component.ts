@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Item } from '../gallery.model';
 import { GalleryService } from '../gallery.service';
 
@@ -12,8 +13,13 @@ import { GalleryService } from '../gallery.service';
 export class GalleryDetailComponent implements OnInit {
   item: Item;
   id: number;
+  isAuthenticated = false;
+  subscription: Subscription; 
+  private userSub: Subscription;
+
 
   constructor(private galleryService: GalleryService,
+               private authService: AuthService,
               private route: ActivatedRoute,
               private router: Router) {
   }
@@ -26,22 +32,28 @@ export class GalleryDetailComponent implements OnInit {
           this.item = this.galleryService.getItem(this.id);
         }
       );
+      this.userSub = this.authService.user.subscribe(user => {
+        this.isAuthenticated = !!user;
+      
+      });
   }
 
-  onItemCategory() {
-    this.router.navigate(['category'], {relativeTo: this.route});
-
-  }
+  ngOnDestroy() { 
+  
+    this.userSub.unsubscribe();
+  } 
 
   onEditItem() {
     this.router.navigate(['edit'], {relativeTo: this.route});
 
   }
 
+
   onDeleteItem() {
     this.galleryService.deleteItem(this.id);
-    this.router.navigate(['gallery']);
+    this.router.navigate(['/gallery']);
   }
+  
   onCancel() { 
 
     this.router.navigate(['../'], {relativeTo: this.route}); 
