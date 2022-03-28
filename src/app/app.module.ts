@@ -29,13 +29,6 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormbtnComponent } from './chatbot/formbtn/formbtn.component';
 import { FormsComponent } from './chatbot/forms/forms.component';
-import { GalleryItemitDetailComponent } from './gallery-itemit/gallery-itemit-detail/gallery-itemit.detail.component';
-import { GalleryItemitService } from './gallery-itemit/gallery-itemit.service'; 
-import { GalleryItemitEditComponent } from './gallery-itemit/gallery-itemit-edit/gallery-itemit-edit.component';
-import { GalleryItemitItemComponent } from './gallery-itemit/gallery-itemit-list/gallery-itemit-item/gallery-itemit-item.component';
-import { GalleryItemitListComponent } from './gallery-itemit/gallery-itemit-list/gallery-itemit-list.component';
-import { GalleryItemitStartComponent } from './gallery-itemit/gallery-itemit-start/gallery-itemit-start.component';
-import { GalleryItemitComponent } from './gallery-itemit/gallery-itemit.component';
 import { AngularFireModule } from '@angular/fire/compat';                     
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';   
 import { AngularFirestore } from '@angular/fire/compat/firestore';         
@@ -43,10 +36,15 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';   
 import { GalleryDetailComponent } from './gallery/gallery-detail/gallery-detail.component';
 import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
+import { GalleryService } from './gallery/gallery.service';
+import { GalleryStartComponent } from './gallery/gallery-start/gallery-start.component';
 
-
-
-
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
+import { GalleryComponent } from './gallery/gallery.component';  
+import { GalleryEditComponent } from './gallery/gallery-edit/gallery-edit.component';  
+import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/gallery-item.component';  
 
 @NgModule({
   declarations: [
@@ -62,17 +60,17 @@ import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-cat
     ChatbotComponent,
     FormbtnComponent,
     FormsComponent,
-    GalleryItemitDetailComponent,
-  GalleryListComponent,
-  GalleryItemitItemComponent,
-  GalleryItemitEditComponent,
-  GalleryItemitListComponent,
-  GalleryItemitStartComponent,
-  GalleryItemitComponent,
-      GalleryDetailComponent,
+     GalleryDetailComponent,
  GalleryCategoryComponent,
+  GalleryStartComponent,
+  HomepageComponent,
+  GalleryCategoryComponent,
+  GalleryListComponent,
+   GalleryComponent,
+   GalleryEditComponent,
+   GalleryItemComponent,
 
- 
+  
 
 
   ],
@@ -94,13 +92,26 @@ import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-cat
     MatSidenavModule,
     MatListModule,
     FontAwesomeModule,
-       AngularFireModule.initializeApp(environment.firebaseConfig),
+     AngularFireModule.initializeApp(environment.firebaseConfig),
      AngularFireDatabaseModule,             
-     AngularFireStorageModule    
+     AngularFireStorageModule,
+     MatToolbarModule,
+     AppRoutingModule,
+    
+     ReactiveFormsModule,
+     RouterModule,
+     CommonModule,
+     BrowserModule,  
+   
+ 
+   
+ 
+
+     
 
 
   ],
-  providers: [ScrollDispatcher, GalleryService, AngularFirestore],
+  providers: [ScrollDispatcher,  GalleryService, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
