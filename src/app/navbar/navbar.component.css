@@ -34,3 +34,7 @@ mat-sidenav{
     font-size: 20px;
 }
 
+.mat-button:hover{
+  font-size: 20px;
+  color: #FFFFFF;
+}

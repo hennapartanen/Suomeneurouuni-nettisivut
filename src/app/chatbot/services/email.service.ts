@@ -13,6 +13,12 @@ export class EmailService {
                 'Content-Type': 'application/json'
             })
         }
-        return this.httpreq.post("http://localhost:3000/email", body, headers);
+        const requestOptions: Object = {
+            headers,
+            responseType: 'text'
+        }
+        return this.httpreq.post("http://localhost:3000/email", body, requestOptions);
+
     }
+
 }

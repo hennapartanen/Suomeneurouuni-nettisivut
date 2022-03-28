@@ -30,12 +30,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormbtnComponent } from './chatbot/formbtn/formbtn.component';
 import { FormsComponent } from './chatbot/forms/forms.component';
 import { GalleryItemitDetailComponent } from './gallery-itemit/gallery-itemit-detail/gallery-itemit.detail.component';
-import { GalleryItemitService } from './gallery-itemit/gallery-itemit.service'; 
+import { GalleryItemitService } from './gallery-itemit/gallery-itemit.service';
 import { GalleryItemitEditComponent } from './gallery-itemit/gallery-itemit-edit/gallery-itemit-edit.component';
 import { GalleryItemitItemComponent } from './gallery-itemit/gallery-itemit-list/gallery-itemit-item/gallery-itemit-item.component';
 import { GalleryItemitListComponent } from './gallery-itemit/gallery-itemit-list/gallery-itemit-list.component';
-import { GalleryItemitStartComponent } from './gallery-itemit/gallery-itemit-start/gallery-itemit-start.component';
+import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
 import { GalleryItemitComponent } from './gallery-itemit/gallery-itemit.component';
+import { GalleryService } from './gallery/gallery.service';
 
 
 
@@ -55,13 +56,12 @@ import { GalleryItemitComponent } from './gallery-itemit/gallery-itemit.componen
     FormbtnComponent,
     FormsComponent,
     GalleryItemitDetailComponent,
-  GalleryListComponent,
-  GalleryItemitItemComponent,
-  GalleryItemitEditComponent,
-  GalleryItemitListComponent,
-  GalleryItemitStartComponent,
-  GalleryItemitComponent
- 
+    GalleryListComponent,
+    GalleryItemitItemComponent,
+    GalleryItemitEditComponent,
+    GalleryItemitListComponent,
+    GalleryItemitComponent
+
 
 
   ],

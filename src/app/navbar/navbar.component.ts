@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { DataStorageService } from '../shared/data-storage.service';
+import { DataStorageService } from '../shared/data.storage.service';
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -16,13 +16,13 @@ export class NavbarComponent implements OnInit {
   isAuthenticated = false;
   private userSub: Subscription;
 
-  constructor(private scroller: ViewportScroller, 
-              private router: Router, 
-              private dataStorageService: DataStorageService,
-              private authService: AuthService) {}
+  constructor(private scroller: ViewportScroller,
+    private router: Router,
+    private dataStorageService: DataStorageService,
+    private authService: AuthService) { }
 
-            
-  ngOnInit()  {
+
+  ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown2() {
-    
+
     document.getElementById("targetPalvelut").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown3() {
- 
+
     document.getElementById("targetYhteistiedot").scrollIntoView({
       behavior: "smooth",
       block: "start",
