@@ -1,9 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core'; 
 
 import { Item } from '../../gallery.model'; 
-
- 
- 
+import { DataStorageService } from 'src/app/shared/data-storage.service';
  
 
 @Component({ 
@@ -19,8 +17,15 @@ export class GalleryItemComponent implements OnInit {
   @Input() index: number; 
 
 
+
+  constructor(private dataStorageService: DataStorageService,) { }
+
   ngOnInit() { 
 
+    
   } 
 
+  onFetchData() {
+    this.dataStorageService.fetchItems().subscribe();
+  }
 } 
