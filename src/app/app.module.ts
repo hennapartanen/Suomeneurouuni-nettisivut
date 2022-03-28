@@ -36,6 +36,14 @@ import { GalleryItemitItemComponent } from './gallery-itemit/gallery-itemit-list
 import { GalleryItemitListComponent } from './gallery-itemit/gallery-itemit-list/gallery-itemit-list.component';
 import { GalleryItemitStartComponent } from './gallery-itemit/gallery-itemit-start/gallery-itemit-start.component';
 import { GalleryItemitComponent } from './gallery-itemit/gallery-itemit.component';
+import { AngularFireModule } from '@angular/fire/compat';                     
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';   
+import { AngularFirestore } from '@angular/fire/compat/firestore';         
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; 
+import { environment } from 'src/environments/environment';   
+import { GalleryDetailComponent } from './gallery/gallery-detail/gallery-detail.component';
+import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
+
 
 
 
@@ -60,7 +68,10 @@ import { GalleryItemitComponent } from './gallery-itemit/gallery-itemit.componen
   GalleryItemitEditComponent,
   GalleryItemitListComponent,
   GalleryItemitStartComponent,
-  GalleryItemitComponent
+  GalleryItemitComponent,
+      GalleryDetailComponent,
+ GalleryCategoryComponent,
+
  
 
 
@@ -82,10 +93,14 @@ import { GalleryItemitComponent } from './gallery-itemit/gallery-itemit.componen
     HttpClientModule,
     MatSidenavModule,
     MatListModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+       AngularFireModule.initializeApp(environment.firebaseConfig),
+     AngularFireDatabaseModule,             
+     AngularFireStorageModule    
+
 
   ],
-  providers: [ScrollDispatcher, GalleryService, GalleryItemitService],
+  providers: [ScrollDispatcher, GalleryService, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
