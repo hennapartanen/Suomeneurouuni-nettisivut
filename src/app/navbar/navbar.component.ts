@@ -68,6 +68,11 @@ export class NavbarComponent implements OnInit {
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
+
+  onLogout() {
+    this.authService.logout();
+  }
+  
   scroll = (): void => {
 
     let scrollHeigth;
