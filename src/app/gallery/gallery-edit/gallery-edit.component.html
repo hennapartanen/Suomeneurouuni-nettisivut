@@ -6,7 +6,7 @@
   
     <button type="button" id="cancel" (click)="onCancel()" class="btn btn-danger" >Cancel</button>
   
-    <button type="submit"  class="btn btn-success" >Save</button> 
+    <button type="submit" class="btn btn-success" >Save</button> 
   
   
           </div> 
@@ -18,23 +18,41 @@
               <input type="text" id="name" formControlName="name" class="form-control"> 
             </div> 
           </div> 
-        </div> 
-        <div class="row"> 
-          <div class="col-xs-12"> 
-            <div class="form-group"> 
-              <label for="imagePath">Kuvan osote</label> 
-  
-  <input type="text" id="imagePath" formControlName="imagePath" class="form-control" #imagePath> 
-  
-            </div>
-          </div> 
-        </div> 
-        <div class="row"> 
-          <div class="col-xs-12"> 
-             <img [src]="imagePath.value" style="height: 300px;" class="img-responsive"> 
-          </div> 
-        </div> 
-  
+        </div>
+
+        
+    <div style="padding: 20mm">
+
+      <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
+      <br />
+     
+      <img [src]="downloadableURL"  id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';"/>
+      
+      {{ downloadableURL }}
+
+      <div *ngIf="progressValue | async as val">
+        <progress type="warning"  id="warning" [value]="val"  ></progress>
+        <br />
+          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}% 
+          </span><span *ngIf="val == 100" style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu</span>
+      </div>
+ 
+    </div>
+
+    <div class="row"> 
+      <div class="col-xs-12"> 
+     <div class="form-group"> 
+          <label for="imagePath">imagePath</label> 
+             <input type="text" id="imagePath" #imagePath formControlName="imagePath" class="form-control"> 
+        <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imagePath.value" class="img-responsive">
+        </div>
+      </div>
+           </div> 
+         </div> 
+       </div>
+
 
    <div class="row">
     <div class="col-xs-12" formArrayName="tuotteet">
@@ -47,17 +65,42 @@
       <input type="text" class="form-control"  formControlName="name">
     </div>
 
-    <div class="col-xs-8">
-      <label for="name">Kuvan osote</label> 
-      <input type="text" class="form-control"  formControlName="imagePath"  #imagePath>
+
+
+    <div style="padding: 20mm">
+
+      <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
+      <br />
+     
+      <img [src]="downloadableURL" id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';" />
+      
+      <br />
+    
+      {{ downloadableURL }}
+    
+      <br />
+
+      <div *ngIf="progressValue | async as val">
+        <progress type="warning"  id="warning" [value]="val"  ></progress>
+        <br />
+          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}% 
+          </span><span *ngIf="val == 100" style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu
+          </span>
+      </div>
+    
     </div>
+
     <div class="row"> 
       <div class="col-xs-12"> 
-       
-         <img [src]="imagePath.value" style="height: 150px;" class="img-responsive"> 
-      </div> 
+     <div class="form-group"> 
+          <label for="imagePath">imagePath</label> 
+             <input type="text" id="imagePath" formControlName="imagePath" class="form-control"> 
+    
+           </div> 
+         </div> 
+       </div>
 
-    </div> 
+   
     <div class="col-xs-8">
       <label for="name">Tuotteen teksti</label> 
       <input type="text" class="form-control"  formControlName="description">
