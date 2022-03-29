@@ -1,4 +1,5 @@
 <div style="height: 0vh;">
+
   <mat-toolbar>
     <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
@@ -11,7 +12,7 @@
         <a (click)="goDown4()" mat-button>Verkkokauppa</a>
         <a (click)="goDown3()" mat-button>Yhteystiedot</a>
         <a (click)="onSaveData()" *ngIf="isAuthenticated" mat-button>Save data</a>
-
+        <a (click)="onLogout()" id="admin" *ngIf="isAuthenticated" mat-button>Kirjaudu ulos</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -25,10 +26,8 @@
         <a (click)="goDown4()" mat-list-item>Verkkokauppa</a>
         <a (click)="goDown3()" mat-list-item>Yhteystiedot</a>
         <a (click)="onSaveData()" *ngIf="isAuthenticated" mat-list-item>Save data</a>
-
-
+        <a (click)="onLogout()" id="admin" *ngIf="isAuthenticated" mat-button>Kirjaudu ulos</a>
       </mat-nav-list>
     </mat-sidenav>
-
   </mat-sidenav-container>
 </div>

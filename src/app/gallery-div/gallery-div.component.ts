@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from '../shared/data.storage.service';
 
 @Component({
   selector: 'app-gallery-div',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryDivComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
     
   }
-
+  
+  onFetchData() {
+    this.dataStorageService.fetchItems().subscribe();
+  }
    
 }

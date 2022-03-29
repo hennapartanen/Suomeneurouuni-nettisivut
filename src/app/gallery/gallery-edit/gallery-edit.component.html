@@ -1,89 +1,178 @@
 <div class="row">
   <div class="col-xs-12">
-    <!--<form [formGroup]="itemForm" (ngSubmit)="onSubmit()"> -->
-    <div class="row">
-      <div class="col-xs-12">
+    <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
 
-        <button type="button" id="cancel" (click)="onCancel()" class="btn btn-danger">Cancel</button>
+          <button type="button" id="cancel" (click)="onCancel()" class="btn btn-danger">Cancel</button>
 
-        <button type="submit" class="btn btn-success">Save</button>
+          <button type="submit" class="btn btn-success">Save</button>
 
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label for="name">Nimi</label>
-          <input type="text" id="name" formControlName="name" class="form-control">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="form-group">
-          <label for="imagePath">Kuvan osote</label>
-
-          <input type="text" id="imagePath" formControlName="imagePath" class="form-control" #imagePath>
 
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <img [src]="imagePath.value" style="height: 300px;" class="img-responsive">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Nimi</label>
+            <input type="text" id="name" formControlName="name" class="form-control">
+          </div>
+        </div>
       </div>
-    </div>
 
 
-    <div class="row">
-      <div class="col-xs-12" formArrayName="tuotteet">
-        <!--
+      <div style="padding: 20mm">
+
+        <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
+        <br />
+
+        <img [src]="downloadableURL" id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';" />
+
+        {{ downloadableURL }}
+
+        <div *ngIf="progressValue | async as val">
+          <progress type="warning" id="warning" [value]="val"></progress>
+          <br />
+          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}%
+          </span><span *ngIf="val == 100"
+            style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu</span>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath">imagePath</label>
+            <input type="text" id="imagePath" #imagePath formControlName="imagePath" class="form-control">
+            <div class="row">
+              <div class="col-xs-12">
+                <img [src]="imagePath.value" class="img-responsive">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12" formArrayName="tuotteet">
+          <div class="row" *ngFor="let tuoteCtrl of itemForm.get('tuotteet')['controls']; let i = index"
+            [formGroupName]="i" style="margin-top: 10px;">
+            >>>>>>> 6f5dd68a441de0e995d2c85ce5024ad9d0a36a00
+
+            <button type="submit" class="btn btn-success">Save</button>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="name">Nimi</label>
+              <input type="text" id="name" formControlName="name" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="imagePath">Kuvan osote</label>
+
+              <input type="text" id="imagePath" formControlName="imagePath" class="form-control" #imagePath>
+
+
+              <div style="padding: 20mm">
+
+                <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
+                <br />
+
+                <img [src]="downloadableURL" id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';" />
+
+                <br />
+
+                {{ downloadableURL }}
+
+                <br />
+
+                <div *ngIf="progressValue | async as val">
+                  <progress type="warning" id="warning" [value]="val"></progress>
+                  <br />
+                  <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val |
+                    number}}%
+                  </span><span *ngIf="val == 100"
+                    style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label for="imagePath">imagePath</label>
+                    <input type="text" id="imagePath" formControlName="imagePath" class="form-control">
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-8">
+                <label for="name">Tuotteen teksti</label>
+                <input type="text" class="form-control" formControlName="description">
+                >>>>>>> 6f5dd68a441de0e995d2c85ce5024ad9d0a36a00
+              </div>
+
+
+              <div class="row">
+                <div class="col-xs-12" formArrayName="tuotteet">
+                  <!--
            <div class="row"
      *ngFor="let tuoteCtrl of itemForm.get('tuotteet')['controls']; let i = index"
      [formGroupName]="i" style="margin-top: 10px;">
 
       -->
 
-        <div class="col-xs-8">
-          <label for="name">Nimi</label>
-          <input type="text" class="form-control" formControlName="name">
-        </div>
+                  <div class="col-xs-8">
+                    <label for="name">Nimi</label>
+                    <input type="text" class="form-control" formControlName="name">
+                  </div>
 
-        <div class="col-xs-8">
-          <label for="name">Kuvan osote</label>
-          <input type="text" class="form-control" formControlName="imagePath" #imagePath>
-        </div>
-        <div class="row">
-          <div class="col-xs-12">
+                  <div class="col-xs-8">
+                    <label for="name">Kuvan osote</label>
+                    <input type="text" class="form-control" formControlName="imagePath" #imagePath>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
 
-            <img [src]="imagePath.value" style="height: 150px;" class="img-responsive">
+                      <img [src]="imagePath.value" style="height: 150px;" class="img-responsive">
+                    </div>
+
+                  </div>
+                  <div class="col-xs-8">
+                    <label for="name">Tuotteen teksti</label>
+                    <input type="text" class="form-control" formControlName="description">
+                  </div>
+
+
+                  <div class="col-xs-2">
+                    <!--<button type="button" class="btn btn-danger" (click)="onDeleteTuote(i)">Poista</button> -->
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                  <div class="col-xs-12">
+                    <button type="button" class="btn btn-success" (click)="onAddTuote()">Lisää tuote</button>
+                  </div>
+
+                </div>
+              </div>
+              <!--</form>-->
+            </div>
+
+
+
           </div>
-
-        </div>
-        <div class="col-xs-8">
-          <label for="name">Tuotteen teksti</label>
-          <input type="text" class="form-control" formControlName="description">
-        </div>
-
-
-        <div class="col-xs-2">
-          <!--<button type="button" class="btn btn-danger" (click)="onDeleteTuote(i)">Poista</button> -->
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="row">
-        <div class="col-xs-12">
-          <button type="button" class="btn btn-success" (click)="onAddTuote()">Lisää tuote</button>
-        </div>
-
-      </div>
-    </div>
-    <!--</form>-->
-  </div>
-
-
-
-</div>

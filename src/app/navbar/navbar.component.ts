@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import { DataStorageService } from '../shared/data.storage.service';
 import { ViewportScroller } from '@angular/common';
@@ -68,6 +69,11 @@ export class NavbarComponent implements OnInit {
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
+
+  onLogout() {
+    this.authService.logout();
+  }
+  
   scroll = (): void => {
 
     let scrollHeigth;
@@ -97,3 +103,4 @@ export class NavbarComponent implements OnInit {
   }
 
 }
+

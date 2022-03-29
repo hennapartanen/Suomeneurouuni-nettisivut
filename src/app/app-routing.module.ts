@@ -7,7 +7,6 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthComponent } from './auth/auth.component';
 import { GalleryResolverService } from './gallery/gallery-resolver.service';
 
-
 const appRoutes: Routes = [
 
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -15,18 +14,22 @@ const appRoutes: Routes = [
     path: 'gallery', component: GalleryComponent,
 
     children: [
+      { path: '', component: GalleryStartComponent, },
       { path: 'new', component: GalleryEditComponent, canActivate: [AuthGuard], },
       {
-        path: ':id', component: GalleryDetailComponent, canActivate: [AuthGuard],
+        path: ':id', component: GalleryDetailComponent,
         resolve: [GalleryResolverService]
       },
       {
         path: ':id/edit', component: GalleryEditComponent, canActivate: [AuthGuard],
         resolve: [GalleryResolverService]
-      }
+      },
+
+
     ]
   },
-  { path: 'auth', component: AuthComponent }
+  { path: 'auth', component: AuthComponent },
+
 ];
 
 

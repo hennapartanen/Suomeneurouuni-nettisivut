@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { Item } from '../gallery.model'; 
 import { GalleryService } from '../gallery.service'; 
 import { AuthService } from 'src/app/auth/auth.service';
- 
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({ 
   selector: 'app-gallery-list', 
@@ -44,13 +44,13 @@ export class GalleryListComponent implements OnInit, OnDestroy {
 
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
-      console.log(!user);
-      console.log(!!user);
+    
     });
 
    
   } 
 
+  
 
   onNewItem() { 
     this.router.navigate(['new'], {relativeTo: this.route}); 

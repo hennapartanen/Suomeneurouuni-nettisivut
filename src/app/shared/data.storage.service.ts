@@ -31,7 +31,7 @@ export class DataStorageService {
           return items.map(item => {
             return {
               ...item,
-              tuotteet: item.tuotteet ? item.tuotteet : []
+              tuotteet: item.tuotteet ? item.tuotteet : [],
             };
           });
         }),
@@ -41,3 +41,4 @@ export class DataStorageService {
       )
   }
 }
+

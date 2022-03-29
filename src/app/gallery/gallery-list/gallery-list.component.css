@@ -1,3 +1,10 @@
-#container{
-    position: absolute;
+
+
+.textinput {
+    float: left;
+    width: 100%;
+    min-height: 100px;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
 }
