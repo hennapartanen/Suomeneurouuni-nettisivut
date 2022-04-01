@@ -1,32 +1,31 @@
+<div class="d-flex flex-row justify-content-center ">
 
-  <div id="itemswrapper">
+  <div id="itemswrapper" class="p-2">
+    <a style="cursor: pointer;" (click)="onSelect(tuote)">
 
+      <img [src]="tuote.imagePath" alt="{{ tuote.name }}" class="img-responsive" style="height: 220px;">
 
-  <a style="cursor: pointer;"
-     (click)="onSelect(tuote)"> 
+      <h3>{{ tuote.name }}</h3>
 
-   <img [src]="tuote.imagePath" alt="{{ tuote.name }}"  
-         class="img-responsive" style="height: 220px;" > 
-  
-  <h3>{{ tuote.name }}</h3> 
+    </a>
+  </div>
 
-  </a> 
 </div>
+
 
 
 <div id="tuotewrapper">
 
-<div *ngIf="selectedTuote">
+  <div *ngIf="selectedTuote">
 
     <h4>{{selectedTuote.name}}</h4>
 
-    <img [src]="selectedTuote.imagePath" 
-         class="img-responsive" style="height: 400px;" >
+    <img [src]="selectedTuote.imagePath" class="img-responsive" style="height: 400px;">
 
     <h5> {{selectedTuote.description}}</h5>
     <div>
-     
+
     </div>
-  
+
   </div>
 </div>

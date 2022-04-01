@@ -59,7 +59,7 @@
         <div class="col-xs-12" formArrayName="tuotteet">
           <div class="row" *ngFor="let tuoteCtrl of itemForm.get('tuotteet')['controls']; let i = index"
             [formGroupName]="i" style="margin-top: 10px;">
-            >>>>>>> 6f5dd68a441de0e995d2c85ce5024ad9d0a36a00
+
 
             <button type="submit" class="btn btn-success">Save</button>
 
@@ -121,58 +121,57 @@
               <div class="col-xs-8">
                 <label for="name">Tuotteen teksti</label>
                 <input type="text" class="form-control" formControlName="description">
-                >>>>>>> 6f5dd68a441de0e995d2c85ce5024ad9d0a36a00
+
               </div>
 
 
               <div class="row">
                 <div class="col-xs-12" formArrayName="tuotteet">
-                  <!--
-           <div class="row"
-     *ngFor="let tuoteCtrl of itemForm.get('tuotteet')['controls']; let i = index"
-     [formGroupName]="i" style="margin-top: 10px;">
 
-      -->
+                  <div class="row" *ngFor="let tuoteCtrl of itemForm.get('tuotteet')['controls']; let i = index"
+                    [formGroupName]="i" style="margin-top: 10px;">
 
-                  <div class="col-xs-8">
-                    <label for="name">Nimi</label>
-                    <input type="text" class="form-control" formControlName="name">
+
+
+                    <div class="col-xs-8">
+                      <label for="name">Nimi</label>
+                      <input type="text" class="form-control" formControlName="name">
+                    </div>
+
+                    <div class="col-xs-8">
+                      <label for="name">Kuvan osote</label>
+                      <input type="text" class="form-control" formControlName="imagePath" #imagePath>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12">
+
+                        <img [src]="imagePath.value" style="height: 150px;" class="img-responsive">
+                      </div>
+
+                    </div>
+                    <div class="col-xs-8">
+                      <label for="name">Tuotteen teksti</label>
+                      <input type="text" class="form-control" formControlName="description">
+                    </div>
+
+
+                    <div class="col-xs-2">
+                      <button type="button" class="btn btn-danger" (click)="onDeleteTuote(i)">Poista</button>
+                    </div>
                   </div>
 
-                  <div class="col-xs-8">
-                    <label for="name">Kuvan osote</label>
-                    <input type="text" class="form-control" formControlName="imagePath" #imagePath>
-                  </div>
+                  <hr>
+
                   <div class="row">
                     <div class="col-xs-12">
-
-                      <img [src]="imagePath.value" style="height: 150px;" class="img-responsive">
+                      <button type="button" class="btn btn-success" (click)="onAddTuote()">Lisää tuote</button>
                     </div>
 
                   </div>
-                  <div class="col-xs-8">
-                    <label for="name">Tuotteen teksti</label>
-                    <input type="text" class="form-control" formControlName="description">
-                  </div>
-
-
-                  <div class="col-xs-2">
-                    <!--<button type="button" class="btn btn-danger" (click)="onDeleteTuote(i)">Poista</button> -->
-                  </div>
                 </div>
 
-                <hr>
-
-                <div class="row">
-                  <div class="col-xs-12">
-                    <button type="button" class="btn btn-success" (click)="onAddTuote()">Lisää tuote</button>
-                  </div>
-
-                </div>
               </div>
-              <!--</form>-->
+
+
+
             </div>
-
-
-
-          </div>

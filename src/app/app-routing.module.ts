@@ -6,6 +6,7 @@ import { GalleryDetailComponent } from './gallery/gallery-detail/gallery-detail.
 import { AuthGuard } from './auth/auth.guard';
 import { AuthComponent } from './auth/auth.component';
 import { GalleryResolverService } from './gallery/gallery-resolver.service';
+import { GalleryStartComponent } from './gallery/gallery-start/gallery-start/gallery-start.component';
 
 const appRoutes: Routes = [
 

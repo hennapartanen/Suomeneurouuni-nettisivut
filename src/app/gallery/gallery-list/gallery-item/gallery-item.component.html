@@ -1,11 +1,7 @@
-<div id="itemswrapper"> 
- 
-    <a style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" > 
-      <img [src]="item.imagePath" alt="{{ item.name }}"  
-      class="img-responsive" style="height: 220px;" (click)="onFetchData()"> 
-      
-      <h4>{{ item.name }}</h4> 
-
-  </a> 
-  
+<div id="itemswrapper" class="p-2">
+  <a style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active">
+    <img [src]="item.imagePath" alt="{{ item.name }}" class="img-responsive" style="height: 220px;"
+      (click)="onFetchData()">
+    <h4>{{ item.name }}</h4>
+  </a>
 </div>

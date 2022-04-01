@@ -42,7 +42,7 @@ import { RouterModule } from '@angular/router';
 import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryEditComponent } from './gallery/gallery-edit/gallery-edit.component';
-import { GalleryStartComponent } from './gallery/gallery-start/gallery-start.component';
+import { GalleryStartComponent } from './gallery/gallery-start/gallery-start/gallery-start.component';
 import { GalleryItemComponent } from './gallery/gallery-list/gallery-item/gallery-item.component';
 
 @NgModule({
