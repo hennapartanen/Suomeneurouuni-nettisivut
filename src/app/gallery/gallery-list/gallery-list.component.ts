@@ -1,65 +1,81 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { Item } from '../gallery.model';
-import { GalleryService } from '../gallery.service';
-import { AuthService } from 'src/app/auth/auth.service';
-import { DataStorageService } from 'src/app/shared/data.storage.service';
+ 
 
-@Component({
-  selector: 'app-gallery-list',
-  templateUrl: './gallery-list.component.html',
-  styleUrls: ['./gallery-list.component.css']
+import { Component, OnInit, OnDestroy } from '@angular/core';  
+import { Router, ActivatedRoute, Params} from '@angular/router';  
+import { Subscription } from 'rxjs';  
+import { Item } from '../gallery.model';  
+import { GalleryService } from '../gallery.service';  
+import { AuthService } from 'src/app/auth/auth.service'; 
+import { TekstiService } from '../teksti.service'; 
+import { Teksti } from '../teksti.model'; 
+import { Input } from '@angular/core';
 
-})
+@Component({  
 
-export class GalleryListComponent implements OnInit, OnDestroy {
-  items: Item[];
-  isAuthenticated = false;
-  subscription: Subscription;
-  private userSub: Subscription;
+  selector: 'app-gallery-list',  
+  templateUrl: './gallery-list.component.html',  
+  styleUrls: ['./gallery-list.component.css']  
 
+})  
 
+export class GalleryListComponent implements OnInit {  
 
-
-  constructor(private galleryService: GalleryService,
-    private router: Router,
-    private authService: AuthService,
-    private route: ActivatedRoute) {
-
-  }
-
-
-
-
-  ngOnInit() {
-
-    this.subscription = this.galleryService.itemsChanged
-      .subscribe(
-        (items: Item[]) => {
-          this.items = items;
-        }
-      );
-    this.items = this.galleryService.getItems();
-
-    this.userSub = this.authService.user.subscribe(user => {
-      this.isAuthenticated = !!user;
-
-    });
+  items: Item[]; 
+  tekstit: Teksti[]; 
+  isAuthenticated = false; 
+  subscription: Subscription;  
+  private userSub: Subscription; 
+  id: number;  
+  editMode = false;  
+  @Input() index: number; 
+ 
+  constructor(private galleryService: GalleryService,  
+              private tekstiService: TekstiService,  
+              private router: Router, 
+              private authService: AuthService,  
+              private route: ActivatedRoute) {  
+  }  
 
 
-  }
+  ngOnInit() {  
+
+    this.subscription = this.galleryService.itemsChanged  
+    .subscribe(  
+      (items: Item[]) => {  
+        this.items = items;  
+      }); 
+  
+      this.subscription = this.tekstiService.tekstitChanged  
+    .subscribe(  
+      (tekstit: Teksti[]) => {  
+        this.tekstit = tekstit;  
+      }  
+
+    );  
+
+  this.items = this.galleryService.getItems();  
+  this.tekstit = this.tekstiService.getTekstit();  
+    this.userSub = this.authService.user.subscribe(user => { 
+      this.isAuthenticated = !!user; 
+    }); 
+
+
+  }  
 
 
 
-  onNewItem() {
-    this.router.navigate(['new'], { relativeTo: this.route });
-  }
+  onNewItem() {  
+    this.router.navigate(['new'], {relativeTo: this.route});  
+  }  
+  
 
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-    this.userSub.unsubscribe();
-  }
+
+
+
+  ngOnDestroy() {  
+    this.subscription.unsubscribe();  
+    this.userSub.unsubscribe(); 
+  }  
 
 } 

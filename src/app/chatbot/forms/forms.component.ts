@@ -42,17 +42,7 @@ export class FormsComponent implements OnInit {
       message: this.messageFormControl.value
     }
     this.emailService.sendMessage(reqObj).subscribe(data => {
-      console.log(`Message ${data}`);
-
-      if (data == "error") {
-        window.location.href = "/?type=error&msg=Lähetys epäonnistui";
-      }
-      else if (data == "Sent Successfully") {
-        window.location.href = "/?type=success&msg=Lähetys onnistui";
-      }
-      else {
-        window.location.href = "/?type=success&msg=virhe";
-      }
+      console.log(data);
     })
   }
 }

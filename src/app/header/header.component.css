@@ -4,6 +4,7 @@ body {
 }
 
 .header{
+   background-color:  #fe852b;
     background-position:top;
     background-size: cover;
     height: 20rem;
@@ -19,8 +20,4 @@ h5 {
     display: block;
     font-size: 1rem;
     font-weight: bold;
-}
-
-.logo{
-    width: 100%;
 }

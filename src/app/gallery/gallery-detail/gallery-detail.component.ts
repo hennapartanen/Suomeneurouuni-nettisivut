@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Item } from '../gallery.model';
 import { GalleryService } from '../gallery.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { TekstiStorageService } from 'src/app/shared/teksti-storage.service';
 
 @Component({
   selector: 'app-gallery-detail',
@@ -19,7 +21,9 @@ export class GalleryDetailComponent implements OnInit {
 
 
   constructor(private galleryService: GalleryService,
-               private authService: AuthService,
+              private dataStorageService: DataStorageService,
+              private tekstiStorageService: TekstiStorageService,
+              private authService: AuthService,
               private route: ActivatedRoute,
               private router: Router) {
   }
@@ -52,6 +56,8 @@ export class GalleryDetailComponent implements OnInit {
   onDeleteItem() {
     this.galleryService.deleteItem(this.id);
     this.router.navigate(['/gallery']);
+    this.dataStorageService.storeItems();
+    this.tekstiStorageService.storeTekstit();
   }
   
   onCancel() { 

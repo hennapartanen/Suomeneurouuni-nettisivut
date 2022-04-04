@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TekstiStorageService } from '../shared/teksti-storage.service';
+import { DataStorageService } from '../shared/data-storage.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tekstiStorageService: TekstiStorageService,
+             private route: ActivatedRoute, 
+              private router: Router,) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+ 
+      this.tekstiStorageService.fetchTekstit().subscribe(); 
 
+  
+ 
+
+}
 }

@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { faHammer } from '@fortawesome/free-solid-svg-icons';
 import { faFire } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-formbtn',
@@ -15,33 +14,23 @@ export class FormbtnComponent {
   faHammer = faHammer;
   faFire = faFire;
   faQuestion = faQuestion;
-  faTimes = faTimes
 
   showForm1: boolean = false;
   showForm2: boolean = false;
   showForm3: boolean = false;
-  clicked1: boolean = false;
-  clicked2: boolean = false;
-  clicked3: boolean = false;
 
   addForm1() {
     this.showForm1 = !this.showForm1;
-    this.showButton = true;
-    this.clicked1 = !this.clicked1;
-
+    this.showButton = false;
   }
 
   addForm2() {
     this.showForm2 = !this.showForm2;
-    this.showButton = true;
-    this.clicked2 = !this.clicked2;
-
+    this.showButton = false;
   }
   addForm3() {
     this.showForm3 = !this.showForm3;
-    this.showButton = true;
-    this.clicked3 = !this.clicked3;
-
+    this.showButton = false;
   }
   ngOnInit(): void {
 

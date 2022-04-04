@@ -1,10 +1,7 @@
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Ajankohtaista</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim excepturi asperiores
-                quod animi, nobis quas! A, impedit fugiat quis aut, nesciunt voluptas quia ex nemo, aspernatur qui
-                eligendi enim culpa. lore</p>
-        </div>
-    </div>
-</div>
+
+ <app-topics-show  
+     *ngFor="let tekstiEl of tekstit.slice(1, 2); let i = index"  
+     [teksti]="tekstiEl"  
+     [index]="i"> 
+</app-topics-show>  
+

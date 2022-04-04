@@ -5,6 +5,8 @@ import { GalleryService } from '../gallery.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { Observable } from 'rxjs';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { TekstiStorageService } from 'src/app/shared/teksti-storage.service';
 
 @Component({ 
 
@@ -27,6 +29,8 @@ export class GalleryEditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
               private router: Router,
+              private dataStorageService: DataStorageService,
+              private tekstiStorageService: TekstiStorageService,
               private galleryService: GalleryService,
               private fireStorage: AngularFireStorage,
               ) { 
@@ -42,8 +46,11 @@ export class GalleryEditComponent implements OnInit {
           this.initForm();
         } 
       ); 
+      
 
   } 
+
+
 
   async onFileChanged(event) {
     const file = event.target.files[0];
@@ -67,6 +74,8 @@ export class GalleryEditComponent implements OnInit {
       this.galleryService.addItem(this.itemForm.value); 
     } 
     this.onCancel(); 
+    this.dataStorageService.storeItems();
+    this.tekstiStorageService.storeTekstit();
   } 
   
   onAddTuote() {

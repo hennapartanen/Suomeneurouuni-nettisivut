@@ -1,0 +1,62 @@
+<div class="row"> 
+    <div class="col-xs-12"> 
+  <form [formGroup]="korjausForm" (ngSubmit)="onSubmit()"> 
+        <div class="row"> 
+          <div class="col-xs-12"> 
+  
+    <button type="button" id="cancel" (click)="onCancel()" class="btn btn-danger" >Cancel</button>
+  
+    <button type="submit" class="btn btn-success" >Save</button> 
+  
+  
+          </div> 
+        </div>
+        <div class="row"> 
+       <div class="col-xs-12"> 
+      <div class="form-group"> 
+           <label for="name">Teksti</label> 
+              <input type="text" id="name" formControlName="teksti" class="form-control"> 
+            </div> 
+          </div> 
+        </div>
+
+        
+    <div style="padding: 20mm">
+
+      <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
+      <br />
+     
+      <img [src]="downloadableURL"  id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';"/>
+      
+      {{ downloadableURL }}
+
+      <div *ngIf="progressValue | async as val">
+        <progress type="warning"  id="warning" [value]="val"  ></progress>
+        <br />
+          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}% 
+          </span><span *ngIf="val == 100" style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu</span>
+      </div>
+ 
+    </div>
+
+    <div class="row"> 
+      <div class="col-xs-12"> 
+     <div class="form-group"> 
+          <label for="imagePath">imagePath</label> 
+             <input type="text" id="imagePath" #imagePath formControlName="imagePath" class="form-control"> 
+        <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imagePath.value" class="img-responsive">
+        </div>
+      </div>
+           </div> 
+         </div> 
+       </div>
+
+
+   </form> 
+  
+      </div>
+    </div>
+  
+   

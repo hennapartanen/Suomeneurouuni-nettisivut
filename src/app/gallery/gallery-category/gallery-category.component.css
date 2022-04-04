@@ -1,10 +1,5 @@
 #itemswrapper{  
-    width: 200px;
-    height: 300px;
-    display: inline-block;
-    padding: 10px;
-    align-items: center;
-    text-align: center;
+    padding: 50px;
 }
 
 h3{
