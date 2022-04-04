@@ -1,11 +1,10 @@
 body {
     height: 100%;
-    
+
 }
 
-.header{
-   background-color:  #fe852b;
-    background-position:top;
+.header {
+    background-position: top;
     background-size: cover;
     height: 20rem;
     display: flex;
@@ -20,4 +19,8 @@ h5 {
     display: block;
     font-size: 1rem;
     font-weight: bold;
+}
+
+.logo {
+    width: 100%;
 }
