@@ -34,7 +34,6 @@ const appRoutes: Routes = [
       { path: '', component: GalleryListComponent, },
       { path: 'new', component: GalleryEditComponent, canActivate: [AuthGuard],},
       { path: ':id', component: GalleryDetailComponent,  },
-      { path: ':id/details', component: GalleryCategoryDetailsComponent,},
       { path: ':id/edit', component: GalleryEditComponent, canActivate: [AuthGuard],},
  
     ]
@@ -93,4 +92,3 @@ const appRoutes: Routes = [
 
 export class AppRoutingModule { } 
 
- 
