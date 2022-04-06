@@ -50,13 +50,12 @@ import { GalleryTextShowComponent } from './gallery/gallery-text/gallery-text-sh
 import { TopicsShowComponent } from './topics/topics-show/topics-show.component';
 import { KorjauksetComponent } from './korjaukset/korjaukset.component';
 import { RemontitComponent } from './remontit/remontit.component';
-
+import { GalleryCategoryBackComponent } from './gallery/gallery-category/gallery-category-back/gallery-category-back.component';
 import { MuutpalvelutComponent } from './muutpalvelut/muutpalvelut.component';
 import { KorjauksetDetailComponent } from './korjaukset/korjaukset-detail/korjaukset-detail.component';
 import { KorjauksetEditComponent } from './korjaukset/korjaukset-edit/korjaukset-edit.component';
 import { KorjauksetItemComponent } from './korjaukset/korjaukset-list/korjaukset-item/korjaukset-item.component';
 import { KorjauksetListComponent } from './korjaukset/korjaukset-list/korjaukset-list.component';
-
 import { KorjauksetTextComponent } from './korjaukset/korjaukset-text/korjaukset-text.component';
 import { MuutpalvelutDetailComponent } from './muutpalvelut/muutpalvelut-detail/muutpalvelut-detail.component';
 import { MuutpalvelutEditComponent } from './muutpalvelut/muutpalvelut-edit/muutpalvelut-edit.component';
@@ -68,7 +67,7 @@ import { RemontitEditComponent } from './remontit/remontit-edit/remontit-edit.co
 import { RemontitListComponent } from './remontit/remontit-list/remontit-list.component';
 import { RemontitTextComponent } from './remontit/remontit-text/remontit-text.component';
 import { RemontitItemComponent } from './remontit/remontit-list/remontit-item/remontit-item.component';
-
+import { GalleryCategoryDetailsComponent } from './gallery/gallery-category/gallery-category-details/gallery-category-details.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +97,7 @@ import { RemontitItemComponent } from './remontit/remontit-list/remontit-item/re
    TopicsShowComponent,
    KorjauksetComponent,
    RemontitComponent,
-
+  GalleryCategoryBackComponent,
    MuutpalvelutComponent,
    KorjauksetDetailComponent,
    KorjauksetEditComponent,
@@ -115,8 +114,8 @@ import { RemontitItemComponent } from './remontit/remontit-list/remontit-item/re
    RemontitListComponent,
    RemontitTextComponent,
    RemontitItemComponent,
-  
-
+   GalleryCategoryDetailsComponent
+ 
 
 
   ],

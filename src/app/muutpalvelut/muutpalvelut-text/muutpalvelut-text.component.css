@@ -19,3 +19,9 @@ background-color: rgb(221, 221, 221);
 button{
     float: right;
 }
+
+#editText {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: blue;
+}

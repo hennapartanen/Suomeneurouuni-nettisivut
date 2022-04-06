@@ -1,7 +1,10 @@
-<div class="container" routerLink="/text/1">
+
+<div class="container" >
     
     <div class="card">
         <div class="card-body">
+            <div id="editText" *ngIf="isAuthenticated" routerLink="/text/1"> muokkaa tekstiä</div>
+
             <h5 class="card-title">Ajankohtaista</h5>
             <h3>{{ teksti.text }}</h3> 
   

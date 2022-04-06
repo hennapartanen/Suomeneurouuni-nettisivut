@@ -50,8 +50,6 @@ export class GalleryEditComponent implements OnInit {
 
   } 
 
-
-
   async onFileChanged(event) {
     const file = event.target.files[0];
     if (file) {

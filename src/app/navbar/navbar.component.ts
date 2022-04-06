@@ -1,5 +1,4 @@
 
-
 import { Component, OnInit } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { ViewportScroller } from '@angular/common';
@@ -19,14 +18,14 @@ export class NavbarComponent implements OnInit {
   isAuthenticated = false;
   private userSub: Subscription;
 
-  constructor(private scroller: ViewportScroller, 
-              private router: Router, 
-              private dataStorageService: DataStorageService,
-              private tekstiStorageService: TekstiStorageService,
-              private authService: AuthService) {}
+  constructor(private scroller: ViewportScroller,
+    private router: Router,
+    private dataStorageService: DataStorageService,
+    private tekstiStorageService: TekstiStorageService,
+    private authService: AuthService) { }
 
-            
-  ngOnInit()  {
+
+  ngOnInit() {
     window.addEventListener('scroll', this.scroll, true);
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
@@ -40,7 +39,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown2() {
-    
+
     document.getElementById("targetPalvelut").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -49,7 +48,7 @@ export class NavbarComponent implements OnInit {
   }
 
   goDown3() {
- 
+
     document.getElementById("targetYhteistiedot").scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -70,13 +69,13 @@ export class NavbarComponent implements OnInit {
     this.tekstiStorageService.storeTekstit();
   }
 
-  onFetchData() { 
-    this.tekstiStorageService.fetchTekstit().subscribe(); 
-   this.dataStorageService.fetchItems().subscribe(); 
-  
+  onFetchData() {
+    this.tekstiStorageService.fetchTekstit().subscribe();
+    this.dataStorageService.fetchItems().subscribe();
 
- } 
- 
+
+  }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
@@ -84,7 +83,7 @@ export class NavbarComponent implements OnInit {
   onLogout() {
     this.authService.logout();
   }
-  
+
   scroll = (): void => {
 
     let scrollHeigth;
@@ -98,20 +97,19 @@ export class NavbarComponent implements OnInit {
     } else if (window.innerWidth < 700 && window.innerWidth > 400) {
       scrollHeigth = 310;
     } else {
-      scrollHeigth = 2;
+      scrollHeigth = 1;
     }
 
     if (window.scrollY >= scrollHeigth) {
       document.body.style.setProperty('--navbar-scroll', "#FC842B");
       document.body.style.setProperty('--navbar-scroll-shadow', "0px 6px 12px -5px #000000");
+      document.body.style.setProperty('--navbar-scroll-text', "#212529")
 
     } else if (window.scrollY <= scrollHeigth) {
       document.body.style.setProperty('--navbar-scroll', "transparent");
       document.body.style.setProperty('--navbar-scroll-shadow', "none");
-
-
+      document.body.style.setProperty('--navbar-scroll-text', "#FFFFFF")
     }
   }
 
 }
-

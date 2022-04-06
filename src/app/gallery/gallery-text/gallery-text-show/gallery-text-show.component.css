@@ -2,3 +2,8 @@ h3 {
     color: black;
     font-size: 17px;
 }
+#editText {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: blue;
+}

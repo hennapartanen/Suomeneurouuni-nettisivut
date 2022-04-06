@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core'; 
 import { DataStorageService } from '../shared/data-storage.service';
 import { TekstiStorageService } from '../shared/teksti-storage.service'; 
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 
 @Component({ 
 
@@ -18,11 +18,14 @@ export class GalleryDivComponent implements OnInit {
   display2 = false;
   display3 = false;
   
+  
   constructor(private dataStorageService: DataStorageService,
               public router: Router, 
+              public route: ActivatedRoute,
               private tekstiStorageService: TekstiStorageService) { } 
 
-  ngOnInit(): void { 
+  ngOnInit() { 
+  
   } 
 
   onFetchData() { 
@@ -33,18 +36,49 @@ export class GalleryDivComponent implements OnInit {
  
   onPress() {
     this.display = ! this.display;
+
+    if (this.display = this.display) {
+      this.router.navigate(['/gallery']);
+    } else {
+      this.router.navigate(['/'])
+    }
+
   }
 
   onPress1() {
     this.display1 = ! this.display1;
+
+    if (this.display1 = this.display1) {
+      this.router.navigate(['/korjaukset'])
+    } else {
+      this.router.navigate(['/'])
+    }
+    
+
   }
 
   onPress2() {
     this.display2 = ! this.display2;
+
+    if (this.display2 = this.display2) {
+      this.router.navigate(['/remontit'])
+    } else {
+      this.router.navigate(['/'])
+    }
+    
+
   }
 
   onPress3() {
     this.display3 = ! this.display3;
+
+    if (this.display3 = this.display3) {
+      this.router.navigate(['/muutpalvelut'])
+    } else {
+      this.router.navigate(['/'])
+    }
+    
+
   }
 
 } 

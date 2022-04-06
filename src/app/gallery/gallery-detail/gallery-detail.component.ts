@@ -19,7 +19,6 @@ export class GalleryDetailComponent implements OnInit {
   subscription: Subscription; 
   private userSub: Subscription;
 
-
   constructor(private galleryService: GalleryService,
               private dataStorageService: DataStorageService,
               private tekstiStorageService: TekstiStorageService,
@@ -42,10 +41,7 @@ export class GalleryDetailComponent implements OnInit {
       });
   }
 
-  ngOnDestroy() { 
-  
-    this.userSub.unsubscribe();
-  } 
+ 
 
   onEditItem() {
     this.router.navigate(['edit'], {relativeTo: this.route});

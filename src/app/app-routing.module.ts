@@ -19,20 +19,24 @@ import { RemontitComponent } from './remontit/remontit.component';
 import { RemontitDetailComponent } from './remontit/remontit-detail/remontit-detail.component';
 import { RemontitEditComponent } from './remontit/remontit-edit/remontit-edit.component';
 import { RemontitListComponent } from './remontit/remontit-list/remontit-list.component';
+import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
+import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
+import { GalleryCategoryDetailsComponent } from './gallery/gallery-category/gallery-category-details/gallery-category-details.component';
 
 
 const appRoutes: Routes = [ 
 
   { path: '', redirectTo: '', pathMatch: 'full' },
-  
   {
-    path: 'gallery', component: GalleryComponent,
+    path: 'gallery', component: GalleryComponent, 
   
     children: [
-      { path: '', component: GalleryStartComponent, },
+      { path: '', component: GalleryListComponent, },
       { path: 'new', component: GalleryEditComponent, canActivate: [AuthGuard],},
-      { path: ':id', component: GalleryDetailComponent, },
-      { path: ':id/edit', component: GalleryEditComponent,  canActivate: [AuthGuard],},
+      { path: ':id', component: GalleryDetailComponent,  },
+      { path: ':id/details', component: GalleryCategoryDetailsComponent,},
+      { path: ':id/edit', component: GalleryEditComponent, canActivate: [AuthGuard],},
+ 
     ]
   },
 

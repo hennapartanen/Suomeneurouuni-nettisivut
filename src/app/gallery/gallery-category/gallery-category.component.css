@@ -1,23 +1,33 @@
-#itemswrapper{  
+#itemswrapper{
+    width: 250px;
+    display: inline-block;
     padding: 50px;
 }
 
-h3{
-    font-size: 23px;
+h4{
+    font-size: 25px;
     color: black;
  
 }
 
-img{
-    height: 200px;
-}
-
-h4{
-    font-size: 50px;
-    color: black;
-    
-}
 h5{
     font-size: 25px;
 }
 
+h3{
+    font-size: 25px;
+    color: black;
+}
+
+#tuotewrapper{
+    position: absolute;
+    top: 0;
+    margin-top: 180px;
+    left: 10%;
+    right: 10%;
+    background-color: white;
+    width: 80%;
+    padding-left: 150px;
+    
+}
+button { color: red }

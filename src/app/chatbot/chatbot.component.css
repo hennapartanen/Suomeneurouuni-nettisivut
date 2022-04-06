@@ -1,3 +1,9 @@
+#msg-box {
+    display: block;
+    right: 40px;
+    bottom: 550px;
+}
+
 .message {
     padding: 10px;
     border-radius: 10px;
@@ -5,14 +11,14 @@
     white-space: pre-wrap;
 }
 
-.bot-message{
+.bot-message {
     background-color: #fff;
     margin-right: 100px;
 }
 
-.pop-message{
+.pop-message {
     background-color: #fff;
-    
+
 }
 
 .chat-btn {
@@ -60,9 +66,9 @@
 
 .chat {
     background-color: #ebeef5;
-    overflow:scroll;
-    overflow-x:hidden;
-    overflow-y:scroll;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     height: 380px;
 }
 
@@ -72,15 +78,15 @@
     width: 230px;
     display: block;
     transition: all 1s;
-}   
+}
 
 .hide {
     opacity: 0;
-  }
-  
-  .show {
+}
+
+.show {
     opacity: 1;
-  }
+}
 
 #check:checked~.wrapper0 {
     display: none;
@@ -94,7 +100,7 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     display: none;
-}   
+}
 
 #check:checked~.wrapper1 {
     display: block;

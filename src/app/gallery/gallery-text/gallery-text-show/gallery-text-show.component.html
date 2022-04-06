@@ -1,6 +1,7 @@
 
-<div id="itemswrapper" routerLink="/text/0"> 
+
+    <div id="editText" *ngIf="isAuthenticated" routerLink="/text/0"> muokkaa tekstiä</div>
 
       <h3>{{ teksti.text }}</h3> 
   
-  </div>
+ 
