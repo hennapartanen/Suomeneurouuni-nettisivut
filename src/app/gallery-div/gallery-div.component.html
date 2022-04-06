@@ -1,7 +1,7 @@
 <div id="targetGalleria"> </div>
 <div class="container">
-    <div class="row justify-content-center" id="targetgalleria" style="background-image: url(assets/img/fireplace.jpg); 
-               background-position:bottom;
+    <div class="row justify-content-center" id="targetgalleria" style="background-image: url(assets/img/tulisija.jpg); 
+               background-position:55% 55%;
                 background-size: cover; text-shadow: 1px 1px 2px black;">
         <div class="col-md-auto ">
             <h2>Tulisijat</h2>
@@ -33,8 +33,7 @@ background-size: cover; text-shadow: 1px 1px 2px black;">
     <div id="comp-render" *ngIf="display1">
         <app-korjaukset></app-korjaukset>
     </div>
-
-
+    <br><br><br>
     <div class="row justify-content-center" style="background-image: url(assets/img/remontti.jpg); background-position: 70% 70%;
 background-size: cover; text-shadow: 1px 1px 2px black;">
         <div class="col-md-auto ">
@@ -48,7 +47,7 @@ background-size: cover; text-shadow: 1px 1px 2px black;">
     <div id="comp-render" *ngIf="display2">
         <app-remontit></app-remontit>
     </div>
-
+    <br><br><br>
     <div class="row justify-content-center" style="background-image: url(assets/img/muut-palvelut.jpg); background-position: 0% 40%;
 background-size: cover; text-shadow: 1px 1px 2px black;">
         <div class="col-md-auto ">
@@ -59,7 +58,6 @@ background-size: cover; text-shadow: 1px 1px 2px black;">
             <a (click)="onPress3()" routerLink="/muutpalvelut" class="btn btn-lg btn-dark ">Muut Palvelut</a>
         </div>
     </div>
-
     <div id="comp-render" *ngIf="display3">
         <app-muutpalvelut></app-muutpalvelut>
     </div>
