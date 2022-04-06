@@ -32,7 +32,7 @@ export class GalleryCategoryComponent implements OnInit {
    onSelect(tuote: Tuote): void {
     this.selectedTuote = tuote;
     console.log(tuote)
-    this.router.navigate(['details'], {relativeTo: this.route}); 
+    
 
   }
 
