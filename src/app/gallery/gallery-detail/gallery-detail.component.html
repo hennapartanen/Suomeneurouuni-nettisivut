@@ -26,10 +26,11 @@
   </div>
 </div>
 
-<app-gallery-category-back></app-gallery-category-back>
+<div *ngIf="!isAuthenticated">
+  <app-gallery-category-back></app-gallery-category-back>
+</div>
 
-
-
-
-<app-gallery-category *ngFor="let tuote of item.tuotteet let i = index" [tuote]="tuote" [index]="i">
-</app-gallery-category>
+<div *ngIf="!isAuthenticated">
+  <app-gallery-category *ngFor="let tuote of item.tuotteet let i = index" [tuote]="tuote" [index]="i">
+  </app-gallery-category>
+</div>
