@@ -21,8 +21,6 @@ import { RemontitEditComponent } from './remontit/remontit-edit/remontit-edit.co
 import { RemontitListComponent } from './remontit/remontit-list/remontit-list.component';
 import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
 import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
-import { GalleryCategoryDetailsComponent } from './gallery/gallery-category/gallery-category-details/gallery-category-details.component';
-
 
 const appRoutes: Routes = [ 
 
