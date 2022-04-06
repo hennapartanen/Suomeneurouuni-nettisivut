@@ -1,15 +1,10 @@
-
-
 <div id="tuotewrapper">
-    <div>
+    <div *ngIf="selectedTuote">
         <h4>{{selectedTuote.name}}</h4>
-    
-        <img [src]="selectedTuote.imagePath" 
-             class="img-responsive" style="height: 300px;" >
-    
+
+        <img [src]="selectedTuote.imagePath" class="img-responsive" style="height: 300px;">
+
         <h5> {{selectedTuote.description}}</h5>
-
-        <div>
     </div>
- </div>
-
+</div>
+<app-gallery-category-back></app-gallery-category-back>
