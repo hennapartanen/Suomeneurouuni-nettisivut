@@ -4,6 +4,7 @@ import { DataStorageService } from '../shared/data-storage.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -12,8 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class HomepageComponent implements OnInit {
 
   constructor(private tekstiStorageService: TekstiStorageService,
-             private route: ActivatedRoute, 
-              private router: Router,) { }
+             
+              public router: Router,) { }
 
   ngOnInit() {
  

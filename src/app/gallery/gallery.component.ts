@@ -15,6 +15,7 @@ import { AuthService } from '../auth/auth.service';
 export class GalleryComponent implements OnInit { 
   selectedItem: Item; 
   isAuthenticated = false;
+  
   private userSub: Subscription;
 
 
@@ -30,9 +31,7 @@ export class GalleryComponent implements OnInit {
 
   }
   
-  ngOnDestroy() {
-    this.userSub.unsubscribe();
-  }
+
 } 
 
  

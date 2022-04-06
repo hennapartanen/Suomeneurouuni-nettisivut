@@ -1,3 +1,4 @@
+
 <div id="border" *ngIf="isAuthenticated" >
 
   <button type="button"  (click)="onCancel()" class="btn btn-danger" >Cancel</button>
@@ -27,11 +28,13 @@
     </div>
   </div>
 
+  <app-gallery-category-back></app-gallery-category-back>
+
+
+
   
-<app-gallery-category
+  <app-gallery-category
   *ngFor="let tuote of item.tuotteet let i = index" 
   [tuote]="tuote" 
   [index]="i"></app-gallery-category> 
 
-  
-  

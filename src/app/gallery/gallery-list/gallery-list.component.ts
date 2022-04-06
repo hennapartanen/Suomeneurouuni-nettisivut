@@ -63,14 +63,10 @@ export class GalleryListComponent implements OnInit {
   }  
 
 
-
   onNewItem() {  
     this.router.navigate(['new'], {relativeTo: this.route});  
   }  
   
-
-
-
 
 
   ngOnDestroy() {  

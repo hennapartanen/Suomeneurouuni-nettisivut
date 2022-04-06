@@ -1,11 +1,11 @@
 
-  <div id="itemswrapper">
 
-
+  <div id="itemswrapper" >
+ 
   <a style="cursor: pointer;"
      (click)="onSelect(tuote)"> 
 
-   <img [src]="tuote.imagePath" alt="{{ tuote.name }}"  
+   <img [src]="tuote.imagePath"  alt="{{ tuote.name }}"  
          class="img-responsive" style="height: 220px;" > 
   
   <h3>{{ tuote.name }}</h3> 
@@ -13,20 +13,4 @@
   </a> 
 </div>
 
-
-<div id="tuotewrapper">
-
-<div *ngIf="selectedTuote">
-
-    <h4>{{selectedTuote.name}}</h4>
-
-    <img [src]="selectedTuote.imagePath" 
-         class="img-responsive" style="height: 400px;" >
-
-    <h5> {{selectedTuote.description}}</h5>
-    <div>
-     
-    </div>
-  
-  </div>
-</div>
+ 
