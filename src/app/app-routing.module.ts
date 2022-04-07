@@ -20,10 +20,6 @@ import { RemontitDetailComponent } from './remontit/remontit-detail/remontit-det
 import { RemontitEditComponent } from './remontit/remontit-edit/remontit-edit.component';
 import { RemontitListComponent } from './remontit/remontit-list/remontit-list.component';
 import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
-<<<<<<< HEAD
-=======
-import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
->>>>>>> 61dd80448b3cc714648f5fd62ebfe349ce821264
 
 const appRoutes: Routes = [ 
 

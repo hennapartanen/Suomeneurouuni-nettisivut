@@ -113,12 +113,8 @@ import { RemontitItemComponent } from './remontit/remontit-list/remontit-item/re
    RemontitListComponent,
    RemontitTextComponent,
    RemontitItemComponent,
-<<<<<<< HEAD
   
 
-=======
-   
->>>>>>> 61dd80448b3cc714648f5fd62ebfe349ce821264
 
   ],
   imports: [
