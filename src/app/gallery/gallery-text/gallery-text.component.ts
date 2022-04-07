@@ -19,6 +19,7 @@ import { TekstiStorageService } from 'src/app/shared/teksti-storage.service';
 
 export class GalleryTextComponent implements OnInit { 
 
+  display = true;
   id: number; 
   editMode = false; 
   textForm: FormGroup; 
@@ -28,7 +29,7 @@ export class GalleryTextComponent implements OnInit {
               private tekstiStorageService: TekstiStorageService,
               private router: Router,
               private tekstiService: TekstiService,
-              private fireStorage: AngularFireStorage,
+      
               ) { 
   } 
 
@@ -57,8 +58,12 @@ export class GalleryTextComponent implements OnInit {
 
 
   onCancel() { 
-    this.router.navigate(['../../'], {relativeTo: this.route}); 
+    this.display = ! this.display;
+    this.router.navigate(['/'], {relativeTo: this.route}); 
+    
+
   } 
+
 
 
 

@@ -3,6 +3,10 @@ import { Subscription } from 'rxjs';
 import { Item } from './gallery.model'; 
 import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TekstiStorageService } from '../shared/teksti-storage.service';
+
+
 
 @Component({ 
 
@@ -15,12 +19,15 @@ import { AuthService } from '../auth/auth.service';
 export class GalleryComponent implements OnInit { 
   selectedItem: Item; 
   isAuthenticated = false;
-  
+  display = false;
   private userSub: Subscription;
 
 
   constructor(private authService: AuthService,
-               private dataStorageService: DataStorageService) { 
+              public router: Router, 
+              public tekstiStorageService: TekstiStorageService,
+              public route: ActivatedRoute,
+              private dataStorageService: DataStorageService) { 
   } 
 
   ngOnInit() {
@@ -28,12 +35,9 @@ export class GalleryComponent implements OnInit {
       this.isAuthenticated = !!user;
     });
     this.dataStorageService.fetchItems().subscribe(); 
+    
+   
 
   }
-  
 
-} 
-
- 
- 
- 
+}

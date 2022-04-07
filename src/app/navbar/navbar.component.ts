@@ -103,12 +103,12 @@ export class NavbarComponent implements OnInit {
     if (window.scrollY >= scrollHeigth) {
       document.body.style.setProperty('--navbar-scroll', "#FC842B");
       document.body.style.setProperty('--navbar-scroll-shadow', "0px 6px 12px -5px #000000");
-      document.body.style.setProperty('--navbar-scroll-text', "#212529")
+  
 
     } else if (window.scrollY <= scrollHeigth) {
       document.body.style.setProperty('--navbar-scroll', "transparent");
       document.body.style.setProperty('--navbar-scroll-shadow', "none");
-      document.body.style.setProperty('--navbar-scroll-text', "#FFFFFF")
+     
     }
   }
 

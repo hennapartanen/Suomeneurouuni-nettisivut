@@ -67,7 +67,6 @@ import { RemontitEditComponent } from './remontit/remontit-edit/remontit-edit.co
 import { RemontitListComponent } from './remontit/remontit-list/remontit-list.component';
 import { RemontitTextComponent } from './remontit/remontit-text/remontit-text.component';
 import { RemontitItemComponent } from './remontit/remontit-list/remontit-item/remontit-item.component';
-import { GalleryCategoryDetailsComponent } from './gallery/gallery-category/gallery-category-details/gallery-category-details.component';
 
 @NgModule({
   declarations: [
@@ -114,8 +113,7 @@ import { GalleryCategoryDetailsComponent } from './gallery/gallery-category/gall
    RemontitListComponent,
    RemontitTextComponent,
    RemontitItemComponent,
-   GalleryCategoryDetailsComponent
- 
+  
 
 
   ],

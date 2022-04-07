@@ -14,7 +14,7 @@ import { GalleryService } from '../gallery.service';
 }) 
 
 export class GalleryCategoryComponent implements OnInit { 
-  @Input() selectedTuote?: Tuote;
+ 
   item: Item;
   id: number;
 
@@ -29,12 +29,6 @@ export class GalleryCategoryComponent implements OnInit {
 
   } 
 
-   onSelect(tuote: Tuote): void {
-    this.selectedTuote = tuote;
-    console.log(tuote)
-    this.router.navigate(['details'], {relativeTo: this.route}); 
-
-  }
 
 
   } 

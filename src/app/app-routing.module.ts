@@ -20,9 +20,6 @@ import { RemontitDetailComponent } from './remontit/remontit-detail/remontit-det
 import { RemontitEditComponent } from './remontit/remontit-edit/remontit-edit.component';
 import { RemontitListComponent } from './remontit/remontit-list/remontit-list.component';
 import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
-import { GalleryCategoryComponent } from './gallery/gallery-category/gallery-category.component';
-import { GalleryCategoryDetailsComponent } from './gallery/gallery-category/gallery-category-details/gallery-category-details.component';
-
 
 const appRoutes: Routes = [ 
 
@@ -34,7 +31,6 @@ const appRoutes: Routes = [
       { path: '', component: GalleryListComponent, },
       { path: 'new', component: GalleryEditComponent, canActivate: [AuthGuard],},
       { path: ':id', component: GalleryDetailComponent,  },
-      { path: ':id/details', component: GalleryCategoryDetailsComponent,},
       { path: ':id/edit', component: GalleryEditComponent, canActivate: [AuthGuard],},
  
     ]
@@ -44,8 +40,8 @@ const appRoutes: Routes = [
     path: 'korjaukset', component: KorjauksetComponent,
   
     children: [
-      { path: '', component: KorjauksetListComponent, },
-      { path: 'new', component: KorjauksetEditComponent, canActivate: [AuthGuard],},
+      { path: '', component: KorjauksetListComponent,   },
+      { path: 'new', component: KorjauksetEditComponent,  canActivate: [AuthGuard],},
       { path: ':id', component: KorjauksetDetailComponent, canActivate: [AuthGuard], },
       {path: ':id/edit', component: KorjauksetEditComponent,  canActivate: [AuthGuard], },
     ]

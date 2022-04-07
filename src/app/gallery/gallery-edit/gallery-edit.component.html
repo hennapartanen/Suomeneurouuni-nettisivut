@@ -26,7 +26,7 @@
       <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
       <br />
      
-      <img [src]="downloadableURL"  id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';"/>
+    
       
       {{ downloadableURL }}
 
@@ -44,11 +44,7 @@
      <div class="form-group"> 
           <label for="imagePath">imagePath</label> 
              <input type="text" id="imagePath" #imagePath  formControlName="imagePath" class="form-control"> 
-        <div class="row">
-        <div class="col-xs-12">
-          <img [src]="imagePath.value" class="img-responsive">
-        </div>
-      </div>
+      
            </div> 
          </div> 
        </div>
@@ -72,7 +68,7 @@
       <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
       <br />
      
-      <img [src]="downloadableURL" id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';" />
+     
       
       <br />
     
@@ -95,7 +91,7 @@
      <div class="form-group"> 
           <label for="imagePath">imagePath</label> 
              <input type="text" id="imagePath" formControlName="imagePath" class="form-control"> 
-    
+          
            </div> 
          </div> 
        </div>
