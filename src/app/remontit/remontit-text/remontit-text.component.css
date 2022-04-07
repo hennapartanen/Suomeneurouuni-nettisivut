@@ -2,22 +2,29 @@ h3 {
     color: black;
     font-size: 17px;
 }
-form{
 
+form {
     border: solid black 1px;
-background-color: rgb(221, 221, 221);
+    background-color: rgb(221, 221, 221);
     position: absolute;
-   
     left: 0;
-    
     margin-left: 25%;
     width: 900px;
- z-index: 2;
+    z-index: 2;
 }
 
-
-button{
+button {
     float: right;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.img-col {
+    flex-basis: 25%;
+    margin-right: 15px;
 }
 
 #editText {
