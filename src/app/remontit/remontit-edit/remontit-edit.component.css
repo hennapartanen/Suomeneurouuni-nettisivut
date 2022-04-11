@@ -1,35 +1,29 @@
-#edit{
-    color: blue;
-    font-size: 25px;
-}
-
-
-#delete{
-    color: red;  
-    font-size: 25px;
-    margin-left: 20px;
-}
-
-#go{
-    color: green;  
-    font-size: 25px;
-    margin-left: 20px;
-}
-
-#border{
+form{
+    width: 800px;
     border: solid black 1px;
+background-color: rgb(221, 221, 221);
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 25%;
+    margin-top: 1000px;
     margin-left: 25%;
     width: 800px;
-   
-    background-color: rgb(233, 233, 233);
+ z-index: 2;
 }
+
+button {
+
+margin-left: 15px;
+}
+
 
 button{
     float: right;
+}
+
+#warning {
+   height: 7mm; 
+   width: 50%;
 }
 
 img{

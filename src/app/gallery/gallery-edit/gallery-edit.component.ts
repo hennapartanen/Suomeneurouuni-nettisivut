@@ -114,7 +114,7 @@ export class GalleryEditComponent implements OnInit {
             new FormGroup({
               name: new FormControl(tuote.name, Validators.required),
               imagePath: new FormControl(tuote.imagePath, Validators.required),
-              description: new FormControl(tuote.description, Validators.required),
+              
      
             })
           );

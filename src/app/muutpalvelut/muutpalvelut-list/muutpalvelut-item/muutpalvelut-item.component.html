@@ -1,12 +1,11 @@
 
-<div id="itemswrapper"> 
- 
-    <a style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" > 
-      <img [src]="palvelu.imagePath" alt="{{ palvelu.teksti }}"  
-      class="img-responsive" style="height: 400px;" > 
-      
-      <h4>{{ palvelu.teksti}}</h4> 
+<div id="itemswrapper" [routerLink]="[index]" routerLinkActive="active"  >
 
-  </a> 
-  
-</div>
+  <div class="container">
+      <div class="img-col">
+        <img [src]="palvelu.imagePath" style="height: 400px;">
+      </div>
+      <div class="text col">
+          <h3>{{ palvelu.teksti}}</h3>
+      </div>
+  </div>

@@ -1,12 +1,11 @@
 
-<div id="itemswrapper"> 
+<div id="itemswrapper"  [routerLink]="[index]" routerLinkActive="active">
  
-    <a style="cursor: auto;" [routerLink]="[index]" routerLinkActive="active" > 
-      <img [src]="korjaus.imagePath" alt="{{ korjaus.teksti }}"  
-      class="img-responsive" style="height: 400px;" > 
-      
-      <h4>{{ korjaus.teksti}}</h4> 
-
-  </a> 
-  
-</div>
+  <div class="container">
+      <div class="img-col">
+        <img [src]="korjaus.imagePath" style="max-width: 70%;">
+      </div>
+      <div class="text col">
+          <h3>{{ korjaus.teksti}}</h3>
+      </div>
+  </div>
