@@ -1,7 +1,7 @@
  
 
-import { Component, OnInit, OnDestroy } from '@angular/core';  
-
+import { Component, OnInit} from '@angular/core';  
+import { AuthService } from '../auth/auth.service';
 import { Subscription } from 'rxjs';  
 
 import { TekstiService } from '../gallery/teksti.service';
@@ -17,26 +17,30 @@ import { Input } from '@angular/core';
 })  
 
 export class TopicsComponent implements OnInit {  
-
+  isAuthenticated = false;
+  private userSub: Subscription;
+  display = false;
   tekstit: Teksti[]; 
   subscription: Subscription;  
   @Input() index: number; 
  
-  constructor(private tekstiService: TekstiService, ) {  }  
+  
+  constructor(private tekstiService: TekstiService, 
+             private authService: AuthService) {  }  
 
 
   ngOnInit() {  
-      this.subscription = this.tekstiService.tekstitChanged  
-    .subscribe(  
-      (tekstit: Teksti[]) => {  
-        this.tekstit = tekstit;  
-      }  
+     this.subscription = this.tekstiService.tekstitChanged  
+  .subscribe(  
+     (tekstit: Teksti[]) => {  
+     this.tekstit = tekstit });  
 
-    );  
+  this.userSub = this.authService.user.subscribe(user => {
+      this.isAuthenticated = !!user});
 
   this.tekstit = this.tekstiService.getTekstit();  
 
-  }  
 
 
+ }  
 } 

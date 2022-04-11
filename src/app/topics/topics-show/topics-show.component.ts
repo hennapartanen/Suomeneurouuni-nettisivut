@@ -15,7 +15,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class TopicsShowComponent implements OnInit {  
   isAuthenticated = false;
   private userSub: Subscription;
-
+  display = true;
   @Input() teksti: Teksti; 
   @Input() index: number;
 
@@ -26,11 +26,18 @@ export class TopicsShowComponent implements OnInit {
   ngOnInit() {  
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
-      console.log(!user);
-      console.log(!!user);
+    
     });
 
+    if (this.teksti.text) {
+      this.display = true
+       } else {
+          this.display = false
+ 
+   }  
  }  
+
+
   ngOnDestroy() {
   this.userSub.unsubscribe();
     }
