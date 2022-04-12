@@ -58,15 +58,9 @@ export class GalleryTextComponent implements OnInit {
 
 
   onCancel() { 
-    this.display = ! this.display;
-    this.router.navigate(['/'], {relativeTo: this.route}); 
-    
-
+   this.display = false;
+   this.router.navigate(['../'])
   } 
-
-
-
-
 
   private initForm() { 
     let tekstiText = ''; 

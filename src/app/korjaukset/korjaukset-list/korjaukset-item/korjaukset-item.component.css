@@ -13,10 +13,6 @@ form {
     z-index: 2;
 }
 
-button {
-    float: right;
-}
-
 .container {
     display: flex;
     align-items: center;
@@ -29,7 +25,13 @@ button {
 }
 
 #editText {
-    font-size: 20px;
-    padding-bottom: 20px;
-    color: blue;
+    color: white;
+   
+    background-color: rgb(0, 136, 170);
+     }
+
+
+button{
+    float: left;
+    margin-bottom: 10px;
 }

@@ -1,6 +1,6 @@
 
 
- <div id="comp-render">
+ <div id="comp-render" *ngIf="display">
   <div class="row"> 
     <div class="col-xs-12"> 
   <form [formGroup]="textForm" (ngSubmit)="onSubmit()"> 
@@ -34,3 +34,4 @@
       </div>
     </div>
   </div>
+ 

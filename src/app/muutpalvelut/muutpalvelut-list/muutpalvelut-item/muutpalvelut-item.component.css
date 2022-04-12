@@ -13,9 +13,6 @@ form {
     z-index: 2;
 }
 
-button {
-    float: right;
-}
 
 .container {
     display: flex;
@@ -33,4 +30,9 @@ button {
     font-size: 20px;
     padding-bottom: 20px;
     color: blue;
+}
+
+button{
+    float: left;
+    margin-bottom: 10px;
 }
