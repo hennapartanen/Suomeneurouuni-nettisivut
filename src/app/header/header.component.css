@@ -4,7 +4,7 @@ body {
 }
 
 .header {
-    background-position: top;
+    background-position: 40% 40%;
     background-size: cover;
     height: 20rem;
     display: flex;

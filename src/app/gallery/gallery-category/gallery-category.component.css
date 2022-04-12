@@ -1,33 +1,49 @@
-#itemswrapper{
+#itemswrapper {
     width: 250px;
     display: inline-block;
     padding: 50px;
+    position: relative;
 }
 
-h4{
+h4 {
     font-size: 25px;
     color: black;
- 
+
 }
 
-h5{
+h5 {
     font-size: 25px;
 }
 
-h3{
+h3 {
     font-size: 25px;
     color: black;
 }
 
-#tuotewrapper{
+#tuotewrapper {
+    position: absolute;
+    background-color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+    top: 110%;
+    z-index: 1000;
+    right: 25%;
+    max-width: 100%;
+}
+
+#tuotewrapper1 {
     position: absolute;
     top: 0;
     margin-top: 180px;
     left: 10%;
     right: 10%;
-  
+    background-color: #FFFFFF;
     width: 80%;
     padding-left: 150px;
-    
+    text-align: center;
+    justify-content: center;
 }
-button { color: red }
+
+button {
+    color: red
+}
