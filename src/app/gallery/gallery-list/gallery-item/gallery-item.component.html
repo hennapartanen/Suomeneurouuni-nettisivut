@@ -2,9 +2,9 @@
 
 <div id="itemswrapper"> 
  
-    <a style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" > 
+    <a  style="cursor: pointer;" [routerLink]="[index]" routerLinkActive="active" > 
       <img [src]="item.imagePath" alt="{{ item.name }}"  
-      class="img-responsive" style="height: 220px;" (click)="onFetchData()"> 
+      class="img-responsive" style="max-height: 220px;" (click)="onFetchData()"> 
       
       <h4>{{ item.name }}</h4> 
 

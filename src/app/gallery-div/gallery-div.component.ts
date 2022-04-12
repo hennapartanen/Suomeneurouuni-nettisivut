@@ -40,8 +40,15 @@ export class GalleryDivComponent implements OnInit {
     if (this.display = this.display) {
       this.router.navigate(['/gallery']);
     } else {
-      this.router.navigate(['/'])
+      this.router.navigate(['../'])
     }
+
+    if(this.display1 = false,
+      this.display2 = false,
+      this.display3 = false) {
+      this.display = true
+     
+  }
 
   }
 
@@ -51,9 +58,15 @@ export class GalleryDivComponent implements OnInit {
     if (this.display1 = this.display1) {
       this.router.navigate(['/korjaukset'])
     } else {
-      this.router.navigate(['/'])
+      this.router.navigate(['../'])
     }
     
+    if(this.display = false,
+      this.display2 = false,
+      this.display3 = false) {
+      this.display1 = true
+      
+  }
 
   }
 
@@ -63,9 +76,14 @@ export class GalleryDivComponent implements OnInit {
     if (this.display2 = this.display2) {
       this.router.navigate(['/remontit'])
     } else {
-      this.router.navigate(['/'])
+      this.router.navigate(['../'])
     }
-    
+    if(this.display = false,
+      this.display1 = false,
+      this.display3 = false) {
+      this.display2 = true
+      
+  }
 
   }
 
@@ -75,9 +93,15 @@ export class GalleryDivComponent implements OnInit {
     if (this.display3 = this.display3) {
       this.router.navigate(['/muutpalvelut'])
     } else {
-      this.router.navigate(['/'])
+      this.router.navigate(['../'])
     }
-    
+
+    if(this.display = false,
+      this.display1 = false,
+      this.display2 = false) {
+      this.display3 = true
+      
+  }
 
   }
 

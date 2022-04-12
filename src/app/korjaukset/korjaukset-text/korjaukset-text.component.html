@@ -1,16 +1,7 @@
-<div id="itemswrapper" routerLink="/text/2">
-    <h3>{{ teksti.text }}</h3>
-    <div class="container">
-        <div class="img-col">
-            <img src="../../../assets/img/tulisijakorjaus.jpg" style="max-width: 100%;">
-        </div>
-        <div class="text col">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nobis at odit hic, explicabo deleniti.
-                Excepturi sapiente omnis, molestiae aspernatur nesciunt itaque vero labore distinctio incidunt
-                dignissimos culpa enim rerum!</h3>
-        </div>
-    </div>
 
-    <div id="editText" *ngIf="isAuthenticated" routerLink="/text/2"> muokkaa tekstiä</div>
+   <button class="btn btn-info"  
+           id="editText" *ngIf="isAuthenticated" routerLink="/text/2"> Muokkaa tekstiä</button>
+
 
     <h3>{{ teksti.text }}</h3>
+

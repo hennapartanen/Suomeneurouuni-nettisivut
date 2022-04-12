@@ -21,21 +21,13 @@
         </div>
 
         
-    <div style="padding: 20mm">
+    <div style="padding: 5mm">
 
       <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
-      <br />
-     
-      <img [src]="downloadableURL"  id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';"/>
-      
+    
+      <div>
       {{ downloadableURL }}
-
-      <div *ngIf="progressValue | async as val">
-        <progress type="warning"  id="warning" [value]="val"  ></progress>
-        <br />
-          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}% 
-          </span><span *ngIf="val == 100" style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu</span>
-      </div>
+    </div>
  
     </div>
 
@@ -44,15 +36,14 @@
      <div class="form-group"> 
           <label for="imagePath">imagePath</label> 
              <input type="text" id="imagePath" #imagePath  formControlName="imagePath" class="form-control"> 
-        <div class="row">
-        <div class="col-xs-12">
-          <img [src]="imagePath.value" class="img-responsive">
-        </div>
-      </div>
+      
            </div> 
          </div> 
        </div>
 
+
+    
+  
 
    <div class="row">
     <div class="col-xs-12" formArrayName="tuotteet">
@@ -60,34 +51,23 @@
      *ngFor="let tuoteCtrl of itemForm.get('tuotteet')['controls']; let i = index"
      [formGroupName]="i" style="margin-top: 10px;">
 
+     <div id="tuotediv"></div>
+
     <div class="col-xs-8">
       <label for="name">Nimi</label> 
-      <input type="text" class="form-control"  formControlName="name">
+      <input type="text" class="form-control" id="tuotenimi" formControlName="name">
     </div>
 
 
 
-    <div style="padding: 20mm">
+    <div style="padding: 5mm">
 
       <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
-      <br />
-     
-      <img [src]="downloadableURL" id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';" />
       
-      <br />
-    
+    <div>
       {{ downloadableURL }}
-    
-      <br />
+    </div>
 
-      <div *ngIf="progressValue | async as val">
-        <progress type="warning"  id="warning" [value]="val"  ></progress>
-        <br />
-          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}% 
-          </span><span *ngIf="val == 100" style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu
-          </span>
-      </div>
-    
     </div>
 
     <div class="row"> 
@@ -95,16 +75,10 @@
      <div class="form-group"> 
           <label for="imagePath">imagePath</label> 
              <input type="text" id="imagePath" formControlName="imagePath" class="form-control"> 
-    
+          
            </div> 
          </div> 
        </div>
-
-   
-    <div class="col-xs-8">
-      <label for="name">Tuotteen teksti</label> 
-      <input type="text" class="form-control"  formControlName="description">
-    </div>
 
 
  <div class="col-xs-2">
@@ -112,8 +86,7 @@
   </div>
      </div>
 
-            <hr>
-
+            
   <div class="row">
   <div class="col-xs-12">
       <button type="button" class="btn btn-success" (click)="onAddTuote()">Lisää tuote</button>
@@ -122,10 +95,14 @@
    </div>
    </div>
    </div>
-      
+  
+   
    </form> 
   
       </div>
     </div>
+  
+   
+
   
    

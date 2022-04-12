@@ -12,7 +12,7 @@ import { Item } from '../gallery.model';
 })
 
 export class GalleryCategoryComponent implements OnInit {
-  selectedTuote?: Tuote;
+
   item: Item;
   id: number;
 
@@ -26,6 +26,7 @@ export class GalleryCategoryComponent implements OnInit {
   ngOnInit() {
 
   }
+
 
 }
 

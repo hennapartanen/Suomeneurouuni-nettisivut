@@ -22,7 +22,8 @@ export class GalleryEditComponent implements OnInit {
   editMode = false; 
   itemForm: FormGroup; 
   basePath = '/images';                       
-  downloadableURL = '';                      
+  downloadableURL = '';    
+  currentInput;      
   task: AngularFireUploadTask;               
   progressValue: Observable<number>;     
 
@@ -33,6 +34,7 @@ export class GalleryEditComponent implements OnInit {
               private tekstiStorageService: TekstiStorageService,
               private galleryService: GalleryService,
               private fireStorage: AngularFireStorage,
+              
               ) { 
   } 
 
@@ -57,10 +59,11 @@ export class GalleryEditComponent implements OnInit {
        this.task =  this.fireStorage.upload(filePath, file);    
        this.progressValue = this.task.percentageChanges();      
        (await this.task).ref.getDownloadURL().then(url => {this.downloadableURL = url; });  
- 
-     } else {  
-       alert('No images selected');
-       this.downloadableURL = ''; }
+     if(event.target.files.length > 0) 
+    {
+      console.log(event.target.files[0].name);
+    }
+     }
    }
 
 
@@ -111,7 +114,7 @@ export class GalleryEditComponent implements OnInit {
             new FormGroup({
               name: new FormControl(tuote.name, Validators.required),
               imagePath: new FormControl(tuote.imagePath, Validators.required),
-              description: new FormControl(tuote.description, Validators.required),
+              
      
             })
           );

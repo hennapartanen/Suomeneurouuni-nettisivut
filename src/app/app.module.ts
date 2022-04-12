@@ -110,6 +110,9 @@ import { RemontitItemComponent } from './remontit/remontit-list/remontit-item/re
     RemontitListComponent,
     RemontitTextComponent,
     RemontitItemComponent,
+
+
+
   ],
   imports: [
     ReactiveFormsModule,

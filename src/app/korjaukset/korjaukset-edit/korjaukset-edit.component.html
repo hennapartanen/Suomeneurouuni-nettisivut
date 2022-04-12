@@ -26,17 +26,9 @@
       <input type="file" name="file" (input)="onFileChanged($event)" accept=".jpeg,.jpg,.png,.svg" />
       <br />
      
-      <img [src]="downloadableURL"  id="url" onerror="this.onerror=null;this.src='assets/noimage.jpg';"/>
-      
       {{ downloadableURL }}
 
-      <div *ngIf="progressValue | async as val">
-        <progress type="warning"  id="warning" [value]="val"  ></progress>
-        <br />
-          <span *ngIf="val<100" style="color:rgb(255, 60, 0); font-size: 17px; font-weight: 410;">{{ val | number}}% 
-          </span><span *ngIf="val == 100" style="color:rgb(1, 153, 34);  font-size: 17px; font-weight: 410;">Ladattu</span>
-      </div>
- 
+
     </div>
 
     <div class="row"> 
