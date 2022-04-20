@@ -1,41 +1,31 @@
 .footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #fe852b;
-    color: white;
-    text-align: center;
-    margin-top: 1rem;
-  }
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fe852b;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
 
-  .instafeed{
-    height:400px;
-    width:400px;
-    overflow:scroll;
-    overflow-x:hidden;
-    overflow-y:scroll;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-right: 10px;
-  }
+.col {
+  height: 300px;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 10%;
+  color: rgb(85, 45, 13);
+}
 
-  .col{ 
-      height: 300px;
-      text-align: center;
-      line-height: 30px;
-      margin-top: 10%;
-      color: rgb(85, 45, 13);
-  }
-  h1{
-      font-size: 25px;
-      color: black;
-  }
-   
-  p{
-    font-size: 20px;
-  }
+h1 {
+  font-size: 25px;
+  color: black;
+}
 
-  #targetYhteistiedot{
-    width: 60px;
-    height: 60px;
+p {
+  font-size: 20px;
+}
+
+#targetYhteistiedot {
+  width: 60px;
+  height: 60px;
 }
